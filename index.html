@@ -71,7 +71,7 @@
             color: var(--brand-muted);
         }
 
-        /* HERO - TIGHT SPACING */
+        /* HERO - TIGHTER PROPORTIONS */
         .hero-section {
             padding-top: 1rem;
             padding-bottom: 4rem;
@@ -84,7 +84,7 @@
 
         .title-line {
             display: block;
-            font-size: clamp(2.5rem, 6.5vw, 5rem);
+            font-size: clamp(2.5rem, 6.5vw, 4.8rem);
             font-weight: 800;
             color: var(--brand-text);
         }
@@ -94,9 +94,9 @@
         }
 
         .title-sub {
-            font-size: clamp(1.3rem, 3.5vw, 2.5rem);
+            font-size: clamp(1.3rem, 3.5vw, 2.4rem);
             font-weight: 800;
-            margin-top: 1rem;
+            margin-top: 0.75rem;
             display: block;
         }
 
@@ -126,7 +126,7 @@
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* WATCH VIDEO - SOLID AND PROFESSIONAL */
+        /* SOLID WATCH VIDEO BUTTON */
         .btn-video {
             background: #F1F5F9; 
             border: 1px solid #CBD5E1;
@@ -193,19 +193,19 @@
         }
         .footer-nav-link:hover { color: white; }
 
-        /* REORDER LOGIC FOR MOBILE */
+        /* REORDER LOGIC FOR MOBILE: TITLE -> IMAGE -> DESCRIPTION -> CTAs */
         @media (max-width: 1024px) {
             .hero-content-wrapper {
                 display: flex;
                 flex-direction: column;
                 text-align: center;
             }
-            .product-image-container { order: 1; margin: 1rem 0 2rem 0; } /* PHOTO FIRST */
-            .hero-badge-container { order: 2; margin-bottom: 1.5rem; }
-            .hero-title-block { order: 3; margin-bottom: 2rem; }
-            .hero-description { order: 4; margin: 0 auto 2.5rem auto; }
+            .hero-badge-container { order: 1; margin-bottom: 1rem; }
+            .hero-title-block { order: 2; margin-bottom: 1.5rem; }
+            .product-image-container { order: 3; margin: 0.5rem 0 2rem 0; } /* PHOTO AFTER TITLE */
+            .hero-description { order: 4; margin: 0 auto 2rem auto; }
             .cta-container { order: 5; display: flex; flex-direction: column; align-items: center; width: 100%; }
-            .trust-row { order: 6; justify-content: center; margin-top: 3rem; opacity: 0.5; }
+            .trust-row { order: 6; justify-content: center; margin-top: 2.5rem; opacity: 0.5; }
             
             .btn-buy, .btn-video { margin-left: auto; margin-right: auto; }
         }
@@ -228,12 +228,7 @@
             <!-- Grid setup: Desktop handles columns, Mobile handles Flex order -->
             <div class="hero-content-wrapper lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
                 
-                <!-- PHOTO (Mobile: order-1 | Desktop: order-last) -->
-                <div class="product-image-container lg:col-span-5 lg:order-last">
-                    <img src="images/glycopezil.png" alt="GlycoPezil Formula" class="product-image max-w-[300px] md:max-w-[460px]">
-                </div>
-
-                <!-- TEXT CONTENT -->
+                <!-- CONTENT AREA -->
                 <div class="lg:col-span-7 flex flex-col">
                     
                     <!-- Trust Badge -->
@@ -244,16 +239,21 @@
                     </div>
 
                     <!-- Headline -->
-                    <div class="hero-title-block mb-8 lg:text-left">
+                    <div class="hero-title-block lg:text-left">
                         <span class="title-line">Daily Support</span>
                         <span class="title-line">For</span>
                         <span class="title-line title-accent">Healthy Blood</span>
                         <span class="title-line title-accent">Sugar</span>
                         <span class="title-sub">With GlycoPezil</span>
                     </div>
+
+                    <!-- PHOTO (Mobile: order-3, after title | Desktop: Hidden and handled in col-span-5) -->
+                    <div class="product-image-container lg:hidden">
+                        <img src="images/glycopezil.png" alt="GlycoPezil Bottle" class="product-image max-w-[280px]">
+                    </div>
                     
                     <!-- Description -->
-                    <p class="hero-description text-base text-gray-500 max-w-lg leading-relaxed font-medium lg:text-left">
+                    <p class="hero-description text-base text-gray-500 max-w-lg leading-relaxed font-medium lg:text-left lg:mt-8">
                         Discover a natural way to support balanced blood sugar and daily metabolic health. Our advanced formula is designed to help maintain healthy glucose levels.
                     </p>
 
@@ -289,11 +289,18 @@
                     </div>
                 </div>
 
+                <!-- Desktop Photo (Hidden on Mobile) -->
+                <div class="hidden lg:flex lg:col-span-5 justify-end">
+                    <img src="images/glycopezil.png" 
+                         alt="GlycoPezil Formula" 
+                         class="product-image max-w-[460px]">
+                </div>
+
             </div>
         </div>
     </main>
 
-    <!-- Footer: Ads Compliance Structure -->
+    <!-- Footer: Standard Compliance -->
     <footer>
         <div class="container-site">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
@@ -338,7 +345,7 @@
             <div class="flex min-h-full items-center justify-center p-6">
                 <div class="relative w-full max-w-2xl bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col pointer-events-auto">
                     <div class="px-6 py-4 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white">
-                        <h3 class="font-black text-brand-primary uppercase tracking-widest text-xs" id="modal-title">Legal Information</h3>
+                        <h3 class="font-black text-brand-primary uppercase tracking-widest text-xs" id="modal-title">Information</h3>
                         <button onclick="closeModal()" class="p-2 hover:bg-slate-50 rounded-lg">
                             <i data-feather="x" class="w-5 h-5"></i>
                         </button>
