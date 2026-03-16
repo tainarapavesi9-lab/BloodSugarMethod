@@ -18,7 +18,6 @@
     <!-- Performance & Speed -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="//cdn.raadsgate.com">
     <link rel="preload" as="image" href="images/glycopezil.png">
 
     <!-- EXTERNAL TRACKING SCRIPT -->
@@ -35,11 +34,11 @@
     <style>
         :root {
             --brand-primary: #2F1557;
-            --brand-accent: #7C3AED;
-            --brand-success: #10B981;
-            --brand-bg: #FDFBFF;
+            --brand-purple: #7C3AED;
+            --brand-bg: #FFFFFF;
             --brand-text: #0F172A;
             --brand-muted: #64748B;
+            --footer-dark: #0A0712;
         }
         
         body { 
@@ -50,128 +49,117 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Professional Life */
-        .mesh-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 0; pointer-events: none;
-            background-image: 
-                radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.08) 0, transparent 50%), 
-                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.05) 0, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(47, 21, 87, 0.05) 0, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(199, 210, 254, 0.1) 0, transparent 50%);
-        }
-
-        .container-pro {
-            max-width: 1240px;
+        .container-site {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* Typography */
-        .hero-title {
-            font-size: clamp(2.5rem, 6.5vw, 5.5rem);
-            line-height: 1.02;
-            font-weight: 800;
+        /* HEADER ALIGNMENT */
+        header { padding: 2.5rem 0; }
+
+        /* HERO TYPOGRAPHY - FIXED SIZING & ALIGNMENT */
+        .hero-title-block {
+            line-height: 0.95;
             letter-spacing: -0.04em;
         }
-
-        .text-gradient {
-            background: linear-gradient(135deg, #2F1557 0%, #7C3AED 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .title-line {
+            display: block;
+            font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+            font-weight: 800;
+            color: var(--brand-text);
+        }
+        .title-accent {
+            color: var(--brand-purple);
+        }
+        .title-small {
+            font-size: clamp(1.8rem, 4vw, 3.2rem);
+            font-weight: 800;
+            margin-top: 0.5rem;
         }
 
-        /* Modern Glass Cards */
-        .glass-badge {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(226, 232, 240, 0.8);
-            box-shadow: 0 4px 12px rgba(47, 21, 87, 0.03);
-        }
-
-        /* CTA Buttons */
+        /* BUTTONS FULFILLING SCREENSHOT */
         .btn-dtc {
-            background: linear-gradient(135deg, #2F1557 0%, #462082 100%);
+            background-color: var(--brand-primary);
             color: white;
-            padding: 1.125rem 1.75rem;
-            border-radius: 100px;
+            padding: 1rem 1.5rem;
+            border-radius: 9999px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             font-weight: 700;
-            font-size: 1.125rem;
+            font-size: 1.1rem;
             width: 100%;
-            max-width: 360px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            box-shadow: 0 12px 24px -8px rgba(47, 21, 87, 0.4);
+            max-width: 380px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(47, 21, 87, 0.2);
         }
-        .btn-dtc:hover { 
-            transform: translateY(-4px) scale(1.01); 
-            box-shadow: 0 20px 32px -12px rgba(47, 21, 87, 0.5); 
-        }
-        
-        .cart-icon {
-            background: rgba(255, 255, 255, 0.15);
-            width: 44px; height: 44px; border-radius: 50%;
+        .cart-circle {
+            background: rgba(255, 255, 255, 0.2);
+            width: 42px; height: 42px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
         }
 
         .btn-vsl {
-            background: white;
-            border: 1px solid #E2E8F0;
+            background-color: #FFFFFF;
+            border: 1px solid #E5E7EB;
             color: var(--brand-text);
-            padding: 1.125rem 1.75rem;
-            border-radius: 100px;
+            padding: 1rem 1.5rem;
+            border-radius: 9999px;
             display: flex; align-items: center; justify-content: center;
-            gap: 0.75rem; font-weight: 700; font-size: 1.125rem;
-            width: 100%; max-width: 360px;
-            transition: all 0.3s ease;
-        }
-        .btn-vsl:hover { border-color: var(--brand-accent); background-color: #F8FAFC; }
-
-        /* Product Image Presentation */
-        .product-visual {
-            position: relative;
-        }
-        .product-visual::after {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%;
-            width: 140%; height: 140%;
-            background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
-            transform: translate(-50%, -50%);
-            z-index: 0;
+            gap: 0.75rem; font-weight: 700; font-size: 1.1rem;
+            width: 100%; max-width: 380px;
+            margin-top: 1rem;
         }
 
-        .float-anim {
-            animation: floating 6s ease-in-out infinite;
-            filter: drop-shadow(0 30px 50px rgba(47, 21, 87, 0.15));
+        /* PRODUCT IMAGE */
+        .float-bottle {
+            animation: float 6s ease-in-out infinite;
         }
-        @keyframes floating {
+        @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-15px); }
         }
 
-        .reveal { 
-            opacity: 0; transform: translateY(30px); 
-            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); 
+        /* FOOTER DESIGN ACCORDING TO SCREENSHOT */
+        footer {
+            background-color: var(--footer-dark);
+            color: #94A3B8;
+            padding: 5rem 0;
+            margin-top: 5rem;
         }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .footer-logo { color: white; font-weight: 800; font-size: 1.5rem; }
+        .footer-link { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; transition: color 0.2s; }
+        .footer-link:hover { color: white; }
+        .fda-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 1rem;
+        }
 
-        footer { background-color: #0A0712; }
+        /* MOBILE FIXES */
+        @media (max-width: 1024px) {
+            .hero-title-block { text-align: center; }
+            .btn-dtc, .btn-vsl { margin-left: auto; margin-right: auto; }
+            .trust-row { justify-content: center; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="mesh-bg"></div>
+    <!-- Ambient Mesh (Slightly more color as requested) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-30">
+        <div class="absolute top-[-10%] right-[-5%] w-[50vw] h-[50vw] bg-purple-100 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-5%] left-[-5%] w-[40vw] h-[40vw] bg-indigo-50 rounded-full blur-[100px]"></div>
+    </div>
 
     <!-- Header -->
-    <header class="relative z-50 py-8 px-6">
-        <div class="container-pro flex justify-between items-center">
-            <span class="font-extrabold text-2xl tracking-tighter text-brand-primary uppercase">GLYCOPEZIL</span>
+    <header class="relative z-50">
+        <div class="container-site flex justify-between items-center">
+            <span class="font-extrabold text-2xl tracking-tighter text-brand-text uppercase">GLYCOPEZIL</span>
             <div class="hidden sm:block">
-                <div class="glass-badge px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-brand-muted">
+                <div class="bg-gray-50 border border-gray-100 px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-muted">
                     Certified Official Store
                 </div>
             </div>
@@ -179,86 +167,69 @@
     </header>
 
     <main class="relative z-10">
-        <section class="py-12 md:py-24">
-            <div class="container-pro">
-                <div class="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24">
+        <section class="py-12 md:py-20">
+            <div class="container-site">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
                     
-                    <!-- Left: Content Area -->
-                    <div class="w-full lg:w-[55%] text-center lg:text-left reveal active">
-                        <!-- Trust Badge -->
-                        <div class="glass-badge inline-flex items-center px-4 py-2 rounded-xl mb-8 mx-auto lg:mx-0">
-                            <span class="text-[10px] font-black text-brand-muted uppercase tracking-widest flex items-center gap-2">
-                                <span class="text-brand-success flex gap-0.5">
-                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
-                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
-                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
-                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
-                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
-                                </span> 
-                                Trusted by 1,900+ happy customers
+                    <!-- Text Side -->
+                    <div class="w-full lg:w-[55%] text-left">
+                        <!-- Badge -->
+                        <div class="inline-flex items-center bg-gray-50 px-4 py-1.5 rounded-lg border border-gray-100 mb-10">
+                            <span class="text-[9px] font-black text-brand-muted uppercase tracking-widest flex items-center gap-1.5">
+                                <span class="text-amber-400">★★★★★</span> TRUSTED BY 1,900+ HAPPY CUSTOMERS
                             </span>
                         </div>
 
-                        <!-- Headlines -->
-                        <div class="mb-10">
-                            <h1 class="hero-title text-brand-text">Daily Support</h1>
-                            <h1 class="hero-title text-brand-text">For</h1>
-                            <h2 class="hero-title mt-4 sm:mt-6">
-                                <span class="text-gradient">Healthy Blood Sugar</span>
-                            </h2>
-                            <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text mt-4">With GlycoPezil</h3>
+                        <!-- Headline (Compact & Aligned) -->
+                        <div class="hero-title-block mb-10">
+                            <span class="title-line">Daily Support</span>
+                            <span class="title-line">For</span>
+                            <span class="title-line title-accent">Healthy Blood</span>
+                            <span class="title-line title-accent">Sugar</span>
+                            <span class="title-small">With GlycoPezil</span>
                         </div>
                         
-                        <!-- Description -->
-                        <p class="text-lg sm:text-xl text-brand-muted mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                        <p class="text-lg text-gray-500 mb-12 max-w-xl leading-relaxed font-medium">
                             Discover a natural way to support balanced blood sugar and daily metabolic health. Our advanced formula is designed to help maintain healthy glucose levels.
                         </p>
 
                         <!-- Action Group -->
-                        <div class="space-y-4 mb-14 max-w-sm mx-auto lg:mx-0">
-                            <a href="https://6pcb7.doctorimpact.com/l" class="btn-dtc group">
+                        <div class="mb-14">
+                            <a href="https://6pcb7.doctorimpact.com/l" class="btn-dtc">
                                 <span>Get GlycoPezil Today</span>
-                                <div class="cart-icon group-hover:scale-110 transition-transform">
+                                <div class="cart-circle">
                                     <i data-feather="shopping-cart" class="w-5 h-5"></i>
                                 </div>
                             </a>
                             
                             <a href="https://txqcm.doctormedved.com/l" class="btn-vsl">
-                                <i data-feather="play-circle" class="w-5 h-5 text-brand-accent"></i>
+                                <i data-feather="play-circle" class="w-5 h-5 text-gray-400"></i>
                                 Watch Video
                             </a>
                         </div>
 
-                        <!-- Trust Markers -->
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 opacity-80 border-t border-slate-200/50 pt-10">
-                            <div class="flex items-center justify-center lg:justify-start gap-2.5">
-                                <div class="w-6 h-6 rounded-full bg-brand-success/10 flex items-center justify-center">
-                                    <i data-feather="check" class="w-3.5 h-3.5 text-brand-success"></i>
-                                </div>
-                                <span class="text-[9px] font-bold uppercase tracking-widest text-brand-muted">60-Day Guarantee</span>
+                        <!-- Trust Row -->
+                        <div class="trust-row flex flex-wrap gap-x-8 gap-y-4 opacity-50">
+                            <div class="flex items-center gap-2">
+                                <i data-feather="check" class="w-4 h-4"></i>
+                                <span class="text-[9px] font-bold uppercase tracking-widest">60-Day Guarantee</span>
                             </div>
-                            <div class="flex items-center justify-center lg:justify-start gap-2.5">
-                                <div class="w-6 h-6 rounded-full bg-brand-success/10 flex items-center justify-center">
-                                    <i data-feather="check" class="w-3.5 h-3.5 text-brand-success"></i>
-                                </div>
-                                <span class="text-[9px] font-bold uppercase tracking-widest text-brand-muted">Made in USA</span>
+                            <div class="flex items-center gap-2">
+                                <i data-feather="check" class="w-4 h-4"></i>
+                                <span class="text-[9px] font-bold uppercase tracking-widest">Made in USA</span>
                             </div>
-                            <div class="flex items-center justify-center lg:justify-start gap-2.5">
-                                <div class="w-6 h-6 rounded-full bg-brand-success/10 flex items-center justify-center">
-                                    <i data-feather="check" class="w-3.5 h-3.5 text-brand-success"></i>
-                                </div>
-                                <span class="text-[9px] font-bold uppercase tracking-widest text-brand-muted">GMP Facility</span>
+                            <div class="flex items-center gap-2">
+                                <i data-feather="check" class="w-4 h-4"></i>
+                                <span class="text-[9px] font-bold uppercase tracking-widest">GMP Facility</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right: Product Presentation -->
-                    <div class="w-full lg:w-[40%] reveal active mt-12 lg:mt-0">
-                        <div class="product-visual flex justify-center lg:justify-end">
-                            <img src="images/glycopezil.png" 
-                                 alt="GlycoPezil Premium Supplement" 
-                                 class="w-full max-w-[320px] sm:max-w-[420px] lg:max-w-full h-auto float-anim relative z-10">
-                        </div>
+                    <!-- Image Side -->
+                    <div class="w-full lg:w-[40%] flex justify-center lg:justify-end">
+                        <img src="images/glycopezil.png" 
+                             alt="GlycoPezil Bottle" 
+                             class="w-full max-w-[420px] h-auto float-bottle drop-shadow-[0_35px_35px_rgba(47,21,87,0.12)]">
                     </div>
 
                 </div>
@@ -266,63 +237,57 @@
         </section>
     </main>
 
-    <!-- Professional Compliant Footer -->
-    <footer class="text-slate-400 py-20 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-accent/20 to-transparent"></div>
-        
-        <div class="container-pro relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
-                
-                <!-- Support Info -->
-                <div class="lg:col-span-4 space-y-10">
-                    <span class="font-extrabold text-2xl tracking-tighter text-white uppercase block">GLYCOPEZIL</span>
-                    <div class="space-y-4">
-                        <p class="text-sm leading-relaxed max-w-sm">
-                            Committed to providing premium quality products and excellent customer support 7 days a week.
-                        </p>
-                        <div class="pt-2">
-                            <p class="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-500 mb-2">Customer Assistance</p>
-                            <p class="text-lg font-bold text-white selection:bg-brand-accent">support@customercs.com</p>
-                        </div>
+    <!-- Footer (Premium Dark / Google Ads Compliant) -->
+    <footer>
+        <div class="container-site">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-20">
+                <div class="lg:col-span-4 space-y-8">
+                    <span class="footer-logo uppercase">GLYCOPEZIL</span>
+                    <p class="text-sm leading-relaxed max-w-xs">
+                        Committed to providing premium quality products and excellent customer support 7 days a week.
+                    </p>
+                    <div class="space-y-1">
+                        <p class="text-[10px] uppercase font-bold tracking-widest text-slate-600">Customer Assistance</p>
+                        <p class="text-lg font-bold text-white">support@customercs.com</p>
                     </div>
                 </div>
                 
-                <!-- Legal & Disclaimers -->
-                <div class="lg:col-span-8 space-y-12">
-                    <div class="bg-white/[0.03] p-8 md:p-10 rounded-3xl border border-white/5">
-                        <p class="text-[11px] leading-relaxed italic text-justify text-slate-400">
-                            <strong class="text-slate-200">FDA Disclaimer:</strong> The statements on this website have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any supplement routine. All trademarks are the property of their respective owners.
+                <div class="lg:col-span-8 space-y-10">
+                    <div class="fda-box">
+                        <p class="text-[11px] leading-relaxed text-slate-400 italic text-justify">
+                            <strong>FDA Disclaimer:</strong> The statements on this website have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any supplement routine. All trademarks are the property of their respective owners.
                         </p>
                     </div>
-                    
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-10 border-t border-white/5 pt-12">
-                        <nav class="flex flex-wrap gap-x-8 gap-y-6 text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">
-                            <button onclick="openModal('privacy')" class="hover:text-white transition-colors">Privacy Policy</button>
-                            <button onclick="openModal('terms')" class="hover:text-white transition-colors">Terms & Conditions</button>
-                            <button onclick="openModal('returns')" class="hover:text-white transition-colors">Refund Policy</button>
-                            <button onclick="openModal('shipping')" class="hover:text-white transition-colors">Shipping Policy</button>
-                            <button onclick="openModal('contact')" class="hover:text-white transition-colors">Contact</button>
-                        </nav>
-                        <p class="text-[10px] font-bold text-slate-700 uppercase tracking-widest">© 2026 GLYCOPEZIL.</p>
-                    </div>
                 </div>
+            </div>
+
+            <!-- Footer Bottom Nav -->
+            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+                    <button onclick="openModal('privacy')" class="footer-link">Privacy Policy</button>
+                    <button onclick="openModal('terms')" class="footer-link">Terms & Conditions</button>
+                    <button onclick="openModal('returns')" class="footer-link">Refund Policy</button>
+                    <button onclick="openModal('shipping')" class="footer-link">Shipping Policy</button>
+                    <button onclick="openModal('contact')" class="footer-link">Contact</button>
+                </nav>
+                <p class="text-[10px] font-bold text-slate-800 uppercase tracking-widest">© 2026 GLYCOPEZIL.</p>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL -->
+    <!-- MODAL SYSTEM -->
     <div id="policy-modal" class="fixed inset-0 z-[100] hidden" aria-modal="true" role="dialog">
         <div class="fixed inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto pointer-events-none">
             <div class="flex min-h-full items-center justify-center p-6">
-                <div class="relative w-full max-w-2xl bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto">
-                    <div class="px-10 py-8 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col pointer-events-auto">
+                    <div class="px-8 py-6 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-10">
                         <h3 class="font-black text-brand-primary uppercase tracking-widest text-sm" id="modal-title">Legal Information</h3>
                         <button onclick="closeModal()" class="p-3 hover:bg-slate-50 rounded-2xl transition-all">
                             <i data-feather="x" class="w-6 h-6"></i>
                         </button>
                     </div>
-                    <div class="p-12 overflow-y-auto max-h-[70vh] text-base leading-relaxed text-slate-600 prose" id="modal-content"></div>
+                    <div class="p-10 overflow-y-auto max-h-[70vh] text-base leading-relaxed text-slate-600 prose" id="modal-content"></div>
                 </div>
             </div>
         </div>
@@ -331,18 +296,12 @@
     <script>
         feather.replace();
 
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.reveal').forEach((el, index) => {
-                setTimeout(() => el.classList.add('active'), index * 100);
-            });
-        });
-
         const modalData = {
-            privacy: { title: "Privacy Policy", content: "<h4>Privacy Information</h4><p>We take your data security seriously. All information collected is used solely for order fulfillment and internal customer support. We use industry-standard encryption for all transactions.</p>" },
-            terms: { title: "Terms & Conditions", content: "<h4>Website Terms</h4><p>By using this website, you agree to our standard terms of service. Products are sold as dietary supplements and do not replace professional medical advice.</p>" },
-            returns: { title: "Refund Policy", content: "<h4>60-Day Guarantee</h4><p>We offer a 60-day money-back guarantee. If you are not satisfied, please contact our support team at support@customercs.com. We require a 30-day trial period to ensure you've experienced the potential benefits.</p>" },
-            shipping: { title: "Shipping Policy", content: "<h4>Fast Shipping</h4><p>Orders are typically processed within 24-72 hours. Domestic shipping usually arrives within 5-10 business days depending on carrier volume.</p>" },
-            contact: { title: "Contact Us", content: "<h4>Support Team</h4><p>Questions about your order? Email us anytime at support@customercs.com. Our team responds within 1 business day.</p>" }
+            privacy: { title: "Privacy Policy", content: "<h4>Privacy Information</h4><p>We respect your privacy. All personal data collected is used strictly for processing orders and support. We do not sell data to third parties.</p>" },
+            terms: { title: "Terms & Conditions", content: "<h4>Website Terms</h4><p>By using this website, you agree to our standard terms. Products are sold as dietary supplements only.</p>" },
+            returns: { title: "Refund Policy", content: "<h4>60-Day Guarantee</h4><p>Not satisfied? Request a full refund within 60 days of purchase. Contact support@customercs.com for instructions.</p>" },
+            shipping: { title: "Shipping Policy", content: "<h4>Fast Shipping</h4><p>Orders are typically processed within 24-72 hours. Delivery times vary based on location.</p>" },
+            contact: { title: "Contact Us", content: "<h4>Support Team</h4><p>Email: support@customercs.com<br>Response time: 1 business day.</p>" }
         };
 
         function openModal(type) {
