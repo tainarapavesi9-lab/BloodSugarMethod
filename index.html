@@ -9,31 +9,32 @@
     <!-- =========================
     SEO AVANÇADO & COMPLIANCE
     ======================== -->
-    <title>GlycoPezil | Suporte Natural para Função Saudável e Mobilidade</title>
-    <meta name="description" content="GlycoPezil é uma fórmula natural projetada para apoiar a função corporal saudável e promover a mobilidade diária.">
-    <meta name="keywords" content="GlycoPezil, função saudável, suporte de mobilidade, fórmula natural, suplemento de bem-estar">
+    <title>GlycoPezil | Suporte Natural para Equilíbrio e Vitalidade Diária</title>
+    <meta name="description" content="Conheça o GlycoPezil, a fórmula botânica avançada para apoiar a função corporal saudável e o bem-estar geral. Ingredientes 100% naturais para a sua rotina.">
+    <meta name="keywords" content="GlycoPezil, suporte glicémia, função saudável, bem-estar natural, suplemento botânico, GlycoPezil oficial">
     <meta name="robots" content="index, follow, max-image-preview:large">
-    <link rel="canonical" href="https://sciaticreliefnow.vercel.app/">
+    <link rel="canonical" href="https://bloodsugarmethod.vercel.app/">
     <meta http-equiv="content-language" content="pt-PT">
 
     <!-- FAVICON -->
-    <link rel="icon" href="images/glycopezil.png" type="image/png">
+    <link rel="icon" href="images/faviconV2.png" type="image/png">
 
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="product">
-    <meta property="og:title" content="GlycoPezil | Fórmula de Suporte Natural">
-    <meta property="og:description" content="Apoie a função saudável e a mobilidade com GlycoPezil. Ingredientes 100% naturais.">
-    <meta property="og:url" content="https://sciaticreliefnow.vercel.app/">
+    <meta property="og:title" content="GlycoPezil | Suporte Natural Avançado">
+    <meta property="og:description" content="Apoie a sua saúde de forma natural com GlycoPezil. Fórmula exclusiva com ingredientes botânicos.">
+    <meta property="og:url" content="https://bloodsugarmethod.vercel.app/">
     <meta property="og:image" content="images/glycopezil.png">
-    <meta property="og:site_name" content="GlycoPezil">
+    <meta property="og:site_name" content="GlycoPezil Official">
 
-    <!-- PERFORMANCE (APENAS FONTES) -->
+    <!-- PERFORMANCE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="images/glycopezil.png" as="image">
+    <link rel="preload" href="images/faviconV2.png" as="image">
     <meta name="theme-color" content="#2F1557">
     
-    <!-- ASSETS DE UI (ESSENCIAIS) -->
+    <!-- ASSETS DE UI -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
@@ -44,9 +45,10 @@
       "@context":"https://schema.org",
       "@type":"Product",
       "name":"GlycoPezil",
-      "image":"images/glycopezil.png",
-      "description":"GlycoPezil é um suplemento de suporte natural projetado para promover a função corporal saudável e mobilidade.",
+      "image":"https://bloodsugarmethod.vercel.app/images/glycopezil.png",
+      "description":"GlycoPezil é um suplemento de suporte natural projetado para promover a função corporal saudável e o equilíbrio diário.",
       "brand":{"@type":"Brand","name":"GlycoPezil"},
+      "url": "https://bloodsugarmethod.vercel.app/",
       "offers":{
         "@type":"Offer",
         "priceCurrency":"USD",
@@ -66,6 +68,7 @@
             font-family: 'Plus Jakarta Sans', sans-serif; 
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
         .bg-brand-primary { background-color: var(--brand-primary); }
         .bg-brand-secondary { background-color: var(--brand-secondary); }
@@ -73,13 +76,13 @@
         .border-brand-primary { border-color: var(--brand-primary); }
         
         .hero-gradient {
-            background: linear-gradient(135deg, #f8f5ff 0%, #ffffff 100%);
+            background: radial-gradient(circle at top right, #fcfaff 0%, #ffffff 100%);
         }
         
         .reveal { 
             opacity: 0; 
-            transform: translateY(20px); 
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); 
+            transform: translateY(30px); 
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); 
         }
         .reveal.active { 
             opacity: 1; 
@@ -87,166 +90,134 @@
         }
 
         .cta-btn {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             touch-action: manipulation;
         }
         .cta-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(47, 21, 87, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(47, 21, 87, 0.2);
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
+            50% { transform: translateY(-20px); }
         }
-        .animate-float { animation: float 4s ease-in-out infinite; }
+        .animate-float { animation: float 6s ease-in-out infinite; }
 
         .prose h4 { color: var(--brand-primary); font-weight: 800; margin-top: 1.5rem; margin-bottom: 0.5rem; text-transform: uppercase; font-size: 0.85rem; border-bottom: 1px solid #eee; padding-bottom: 4px; }
         .prose p { margin-bottom: 1rem; line-height: 1.6; color: #4b5563; }
-        .prose ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; color: #4b5563; }
     </style>
 </head>
 <body class="text-gray-900 bg-white">
 
-    <!-- Faixa Promocional -->
-    <div class="bg-brand-primary text-white py-2 px-4 text-center text-[10px] font-bold tracking-[0.15em] uppercase">
+    <!-- Faixa Promocional Otimizada -->
+    <div class="bg-brand-primary text-white py-2.5 px-4 text-center text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase">
         PORTES GRÁTIS EM TODAS AS ENCOMENDAS HOJE!
     </div>
 
-    <header class="sticky top-0 bg-white/80 backdrop-blur-md z-40 border-b border-gray-100">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold">G</div>
-                <span class="font-extrabold text-xl tracking-tight text-brand-dark">GlycoPezil</span>
+    <!-- Header com Alinhamento Refinado -->
+    <header class="sticky top-0 bg-white/90 backdrop-blur-lg z-40 border-b border-gray-100">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-brand-primary rounded-xl flex items-center justify-center text-white font-black shadow-lg shadow-purple-900/20">G</div>
+                <span class="font-extrabold text-xl md:text-2xl tracking-tight text-brand-dark">GlycoPezil</span>
             </div>
-            <a href="https://6pcb7.doctorimpact.com/l" class="hidden md:block bg-brand-primary text-white px-6 py-2 rounded-full font-bold text-sm hover:opacity-90 transition-opacity">
+            <a href="https://6pcb7.doctorimpact.com/l" class="hidden sm:inline-flex bg-brand-primary text-white px-7 py-2.5 rounded-full font-bold text-sm hover:opacity-90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-purple-900/10">
                 Encomendar Agora
             </a>
         </div>
     </header>
 
     <main>
-        <!-- SECÇÃO HERO -->
-        <section id="order" class="hero-gradient overflow-hidden">
-            <div class="container mx-auto px-6 py-10 md:py-20 lg:py-24">
-                <div class="flex flex-col lg:grid lg:grid-cols-2 lg:items-center gap-10 lg:gap-16">
+        <!-- SECÇÃO HERO COM FORMATAÇÃO MELHORADA -->
+        <section id="order" class="hero-gradient overflow-hidden min-h-[85vh] flex items-center">
+            <div class="container mx-auto px-6 py-12 md:py-24 max-w-7xl">
+                <div class="flex flex-col lg:grid lg:grid-cols-12 lg:items-center gap-12 md:gap-20">
                     
-                    <!-- 1. CONTEÚDO TEXTUAL -->
-                    <div class="w-full text-center lg:text-left reveal lg:col-start-1">
-                        <div class="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full shadow-sm border border-gray-100 mb-8 mx-auto lg:mx-0">
+                    <!-- 1. CONTEÚDO TEXTUAL (7 COLUNAS EM DESKTOP) -->
+                    <div class="w-full text-center lg:text-left reveal lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 bg-purple-50 px-5 py-2 rounded-full border border-purple-100 mb-8 mx-auto lg:mx-0">
                             <div class="flex text-amber-400">
-                                <i data-feather="star" class="w-3 h-3 fill-current"></i>
-                                <i data-feather="star" class="w-3 h-3 fill-current"></i>
-                                <i data-feather="star" class="w-3 h-3 fill-current"></i>
-                                <i data-feather="star" class="w-3 h-3 fill-current"></i>
-                                <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                <i data-feather="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-feather="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-feather="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-feather="star" class="w-3.5 h-3.5 fill-current"></i>
+                                <i data-feather="star" class="w-3.5 h-3.5 fill-current"></i>
                             </div>
-                            <span class="text-[9px] md:text-[10px] font-bold text-gray-500 uppercase tracking-wider">Confiado por mais de 1.900 clientes satisfeitos</span>
+                            <span class="text-[10px] font-extrabold text-brand-primary uppercase tracking-widest">+1.900 Clientes Satisfeitos</span>
                         </div>
 
-                        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-[#111827] leading-[1.15] mb-6 tracking-tight">
-                            Suporte Diário Para Uma Função Saudável Com <span class="text-brand-primary">GlycoPezil</span>
+                        <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-[#111827] leading-[1.1] mb-8 tracking-tight max-w-4xl">
+                            Suporte Diário Para Uma <span class="text-brand-primary">Função Saudável</span>
                         </h1>
                         
-                        <p class="text-base md:text-lg text-gray-600 mb-8 max-w-xl leading-relaxed mx-auto lg:mx-0">
-                            Descubra uma forma natural de apoiar o conforto interno e a mobilidade quotidiana. A nossa fórmula avançada foi concebida para promover uma função saudável e ajudá-lo a manter-se ativo.
+                        <p class="text-lg md:text-xl text-gray-500 mb-10 max-w-2xl leading-relaxed mx-auto lg:mx-0">
+                            Descubra uma forma natural de apoiar o conforto interno e o equilíbrio quotidiano. A nossa fórmula avançada foi concebida para promover uma função saudável e ajudá-lo a manter-se vitalizado.
                         </p>
 
-                        <!-- CHECKLIST (Apenas Desktop) -->
-                        <div class="hidden lg:flex flex-col items-start gap-4 mb-10 max-w-md">
-                            <div class="flex items-center gap-3">
-                                <div class="bg-brand-secondary w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"><i data-feather="check" class="w-3.5 h-3.5 text-brand-primary"></i></div>
-                                <span class="text-sm font-bold text-gray-800">Suporte natural avançado</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="bg-brand-secondary w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"><i data-feather="check" class="w-3.5 h-3.5 text-brand-primary"></i></div>
-                                <span class="text-sm font-bold text-gray-800">Ingredientes 100% naturais</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="bg-brand-secondary w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"><i data-feather="check" class="w-3.5 h-3.5 text-brand-primary"></i></div>
-                                <span class="text-sm font-bold text-gray-800">Apoia o conforto diário</span>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="bg-brand-secondary w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0"><i data-feather="check" class="w-3.5 h-3.5 text-brand-primary"></i></div>
-                                <span class="text-sm font-bold text-gray-800">Fórmula sem OGM</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 2. IMAGEM DO PRODUTO -->
-                    <div class="w-full flex justify-center lg:justify-end reveal lg:col-start-2 lg:row-span-2">
-                        <div class="relative">
-                            <div class="absolute inset-0 bg-brand-primary/10 rounded-full scale-90 blur-3xl opacity-50"></div>
-                            <img src="images/glycopezil.png" 
-                                 alt="GlycoPezil Suplemento" 
-                                 class="relative z-10 w-full max-w-[280px] md:max-w-[420px] lg:max-w-[480px] h-auto drop-shadow-2xl animate-float"
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
-                            
-                            <!-- Fallback UI caso a imagem não carregue -->
-                            <div class="hidden relative z-10 w-[220px] md:w-[380px] lg:w-[440px] aspect-[3/4] bg-white rounded-3xl shadow-2xl items-center justify-center p-8 border border-purple-50 animate-float">
-                                <div class="text-center">
-                                    <div class="w-24 h-24 md:w-40 md:h-40 bg-brand-primary/5 rounded-full mx-auto flex items-center justify-center mb-6">
-                                         <i data-feather="shield" class="w-12 h-12 md:w-20 md:h-20 text-brand-primary"></i>
-                                    </div>
-                                    <h3 class="text-2xl md:text-4xl font-black text-brand-primary italic mb-2">GlycoPezil</h3>
-                                    <p class="text-[10px] md:text-xs text-purple-400 uppercase tracking-widest font-bold">Suplemento Alimentar Natural</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- 3. CAIXA CTA -->
-                    <div class="w-full reveal lg:col-start-1">
-                        <div class="bg-white p-6 md:p-8 rounded-[2.5rem] shadow-2xl shadow-purple-900/5 border border-gray-100 max-w-md mx-auto lg:mx-0">
-                            <p class="text-center font-bold text-gray-400 uppercase tracking-[0.15em] text-[9px] mb-5">Escolha a sua opção:</p>
+                        <!-- CAIXA CTA INTEGRADA NO FLOW -->
+                        <div class="max-w-md mx-auto lg:mx-0">
                             <div class="space-y-4">
-                                <a href="https://6pcb7.doctorimpact.com/l" class="cta-btn flex items-center justify-between bg-brand-primary text-white px-8 py-5 rounded-2xl font-extrabold group text-sm md:text-base">
+                                <a href="https://6pcb7.doctorimpact.com/l" class="cta-btn flex items-center justify-between bg-brand-primary text-white px-8 py-5 rounded-2xl font-extrabold group text-base md:text-lg">
                                     <span>Página Oficial do Produto</span>
-                                    <i data-feather="shopping-cart" class="w-5 h-5 opacity-70 group-hover:scale-110 transition-transform"></i>
+                                    <i data-feather="arrow-right" class="w-5 h-5 opacity-70 group-hover:translate-x-1 transition-transform"></i>
                                 </a>
-                                <a href="https://txqcm.doctormedved.com/l" class="cta-btn flex items-center justify-between bg-gray-900 text-white px-8 py-5 rounded-2xl font-extrabold group text-sm md:text-base">
+                                <a href="https://txqcm.doctormedved.com/l" class="cta-btn flex items-center justify-between bg-gray-900 text-white px-8 py-5 rounded-2xl font-extrabold group text-base md:text-lg">
                                     <span>Ver Vídeo GlycoPezil</span>
                                     <i data-feather="play-circle" class="w-5 h-5 opacity-70 group-hover:scale-110 transition-transform text-brand-secondary"></i>
                                 </a>
                             </div>
-                            <p class="text-center text-[10px] text-gray-400 mt-5 flex items-center justify-center gap-2">
-                                <i data-feather="lock" class="w-3 h-3"></i> Pagamento seguro com encriptação SSL
-                            </p>
+                            <div class="flex items-center justify-center lg:justify-start gap-4 mt-6 opacity-60">
+                                <p class="text-[10px] text-gray-500 flex items-center gap-1.5 font-bold uppercase tracking-wider">
+                                    <i data-feather="lock" class="w-3 h-3 text-brand-primary"></i> 256-Bit SSL Secure
+                                </p>
+                                <p class="text-[10px] text-gray-500 flex items-center gap-1.5 font-bold uppercase tracking-wider">
+                                    <i data-feather="truck" class="w-3 h-3 text-brand-primary"></i> Envio Rápido
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
-                            <!-- CHECKLIST MOBILE -->
-                            <div class="grid grid-cols-2 gap-x-4 gap-y-5 mt-10 lg:hidden border-t border-gray-50 pt-8">
-                                <div class="flex flex-col items-center text-center">
-                                    <div class="bg-brand-secondary w-7 h-7 rounded-full flex items-center justify-center mb-2"><i data-feather="check" class="w-3.5 h-3.5 text-brand-primary"></i></div>
-                                    <span class="text-[11px] leading-tight font-bold text-gray-800">Suporte<br>Avançado</span>
-                                </div>
-                                <div class="flex flex-col items-center text-center">
-                                    <div class="bg-brand-secondary w-7 h-7 rounded-full flex items-center justify-center mb-2"><i data-feather="check" class="w-3.5 h-3.5 text-brand-primary"></i></div>
-                                    <span class="text-[11px] leading-tight font-bold text-gray-800">100%<br>Natural</span>
-                                </div>
-                                <div class="flex flex-col items-center text-center">
-                                    <div class="bg-brand-secondary w-7 h-7 rounded-full flex items-center justify-center mb-2"><i data-feather="check" class="w-3.5 h-3.5 text-brand-primary"></i></div>
-                                    <span class="text-[11px] leading-tight font-bold text-gray-800">Conforto<br>Diário</span>
-                                </div>
-                                <div class="flex flex-col items-center text-center">
-                                    <div class="bg-brand-secondary w-7 h-7 rounded-full flex items-center justify-center mb-2"><i data-feather="check" class="w-3.5 h-3.5 text-brand-primary"></i></div>
-                                    <span class="text-[11px] leading-tight font-bold text-gray-800">Sem<br>OGM</span>
+                    <!-- 2. IMAGEM DO PRODUTO (5 COLUNAS EM DESKTOP) -->
+                    <div class="w-full flex justify-center lg:justify-end reveal lg:col-span-5 mt-8 lg:mt-0">
+                        <div class="relative group">
+                            <!-- Efeito de Aura em Camadas -->
+                            <div class="absolute inset-0 bg-brand-primary/20 rounded-full scale-110 blur-3xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
+                            <div class="absolute inset-0 bg-brand-secondary/40 rounded-full scale-75 blur-2xl opacity-40"></div>
+                            
+                            <!-- Imagem Principal -->
+                            <img src="images/glycopezil.png" 
+                                 alt="GlycoPezil Suplemento" 
+                                 class="relative z-10 w-full max-w-[320px] md:max-w-[480px] h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)] animate-float"
+                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                            
+                            <!-- Fallback UI elegante -->
+                            <div class="hidden relative z-10 w-[260px] md:w-[400px] aspect-[3/4] bg-white rounded-[3rem] shadow-2xl items-center justify-center p-12 border border-purple-50 animate-float">
+                                <div class="text-center">
+                                    <div class="w-28 h-28 md:w-44 md:h-44 bg-brand-primary/5 rounded-full mx-auto flex items-center justify-center mb-8">
+                                         <i data-feather="shield" class="w-14 h-14 md:w-24 md:h-24 text-brand-primary"></i>
+                                    </div>
+                                    <h3 class="text-3xl md:text-5xl font-black text-brand-primary italic mb-2">GlycoPezil</h3>
+                                    <p class="text-[11px] md:text-sm text-purple-400 uppercase tracking-[0.2em] font-black">Suplemento Natural</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="bg-[#0b0614] text-gray-400 py-16">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
-                <div class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center text-white/50 font-bold">G</div>
-                    <span class="font-extrabold text-xl tracking-tight text-white/60">GlycoPezil</span>
+    <!-- Footer com Espaçamento Ajustado -->
+    <footer class="bg-[#0b0614] text-gray-400 py-20">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 mb-16">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center text-white/50 font-black">G</div>
+                    <span class="font-extrabold text-2xl tracking-tight text-white/60">GlycoPezil</span>
                 </div>
-                <nav class="flex flex-wrap gap-6 text-[11px] font-bold uppercase tracking-widest">
+                <nav class="flex flex-wrap gap-x-8 gap-y-4 text-[12px] font-bold uppercase tracking-widest">
                     <button onclick="openModal('terms')" class="hover:text-white transition-colors">Termos de Venda</button>
                     <button onclick="openModal('privacy')" class="hover:text-white transition-colors">Privacidade</button>
                     <button onclick="openModal('shipping')" class="hover:text-white transition-colors">Envio</button>
@@ -255,45 +226,45 @@
                 </nav>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-[10px] border-t border-gray-800 pt-12 opacity-80">
-                <div class="space-y-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 text-[11px] border-t border-gray-800/50 pt-16">
+                <div class="space-y-6">
                     <div>
-                        <p class="text-gray-500 uppercase font-bold text-[8px] mb-2 tracking-widest">Informação do Distribuidor Autorizado</p>
-                        <p class="font-bold text-gray-200">GlycoPezil Global Distribution Partner</p>
-                        <p>30 N Gould St, Sheridan, WY 82801, USA</p>
-                        <p>Apoio: (855) 212-8068 | support@glycopezil.com</p>
+                        <p class="text-gray-500 uppercase font-black text-[9px] mb-4 tracking-widest">Distribuição Oficial</p>
+                        <p class="font-bold text-gray-200 text-sm">GlycoPezil Global Distribution Partner</p>
+                        <p class="mt-2">30 N Gould St, Sheridan, WY 82801, USA</p>
+                        <p class="mt-1">Apoio: (855) 212-8068 | <span class="text-brand-secondary">support@glycopezil.com</span></p>
                     </div>
                 </div>
-                <div class="space-y-6 leading-relaxed">
-                    <p class="border-l border-brand-primary pl-4">
-                        <strong class="text-gray-300 block mb-1 uppercase text-[8px]">Aviso da FDA:</strong>
-                        Estas declarações não foram avaliadas pela Food and Drug Administration. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Os resultados podem variar dependendo da biologia e estilo de vida individuais.
+                <div class="space-y-8 leading-relaxed opacity-70">
+                    <p class="border-l-2 border-brand-primary pl-6">
+                        <strong class="text-gray-300 block mb-2 uppercase text-[9px] tracking-widest font-black">Aviso FDA:</strong>
+                        Estas declarações não foram avaliadas pela Food and Drug Administration. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença.
                     </p>
                     <p>
-                        <strong class="text-gray-300 block mb-1 uppercase text-[8px]">Divulgação de Publicidade:</strong>
-                        Este site não faz parte do Google™, YouTube™ ou Meta Inc. e não é endossado pelo Google ou Meta de forma alguma. As marcas comerciais são propriedade dos seus respetivos donos.
+                        <strong class="text-gray-300 block mb-2 uppercase text-[9px] tracking-widest font-black">Divulgação Publicitária:</strong>
+                        Este site não faz parte do Google™, YouTube™ ou Meta Inc. e não é endossado pelo Google ou Meta de forma alguma.
                     </p>
-                    <p class="text-[9px] opacity-40">&copy; 2026 GlycoPezil. Todos os direitos reservados. Parceiro de Distribuição Autorizado.</p>
+                    <p class="text-[10px] font-bold tracking-widest uppercase">&copy; 2026 GlycoPezil. Todos os direitos reservados.</p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- MODAL -->
+    <!-- MODAL POLÍTICAS -->
     <div id="policy-modal" class="fixed inset-0 z-[100] hidden" aria-modal="true" role="dialog">
-        <div class="fixed inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
+        <div class="fixed inset-0 bg-black/95 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto pointer-events-none">
-            <div class="flex min-h-full items-center justify-center p-4">
-                <div class="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col pointer-events-auto">
-                    <div class="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-white sticky top-0">
-                        <h3 class="font-bold text-gray-900 uppercase tracking-tight" id="modal-title">Informação Legal</h3>
+            <div class="flex min-h-full items-center justify-center p-6">
+                <div class="relative w-full max-w-3xl bg-white rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto">
+                    <div class="px-8 py-6 border-b border-gray-100 flex justify-between items-center bg-white sticky top-0">
+                        <h3 class="font-black text-brand-primary uppercase tracking-widest text-sm" id="modal-title">Informação Legal</h3>
                         <button onclick="closeModal()" class="p-2 hover:bg-gray-100 rounded-full transition-colors" aria-label="Fechar modal">
-                            <i data-feather="x" class="w-5 h-5"></i>
+                            <i data-feather="x" class="w-6 h-6"></i>
                         </button>
                     </div>
-                    <div class="p-8 overflow-y-auto max-h-[75vh] text-sm leading-relaxed text-gray-600 prose" id="modal-content"></div>
-                    <div class="p-6 border-t border-gray-100 bg-gray-50 text-right">
-                        <button onclick="closeModal()" class="bg-brand-primary text-white px-8 py-3 rounded-2xl font-bold text-sm hover:opacity-90 transition-colors">Fechar</button>
+                    <div class="p-10 overflow-y-auto max-h-[70vh] text-base leading-relaxed text-gray-600 prose" id="modal-content"></div>
+                    <div class="p-8 border-t border-gray-100 bg-gray-50 flex justify-end">
+                        <button onclick="closeModal()" class="bg-brand-primary text-white px-10 py-3.5 rounded-2xl font-black text-xs uppercase tracking-widest hover:opacity-90 transition-all">Fechar</button>
                     </div>
                 </div>
             </div>
@@ -301,24 +272,29 @@
     </div>
 
     <script>
+        // Inicializar ícones
         feather.replace();
 
-        function initApp() {
+        // Animações ao Scroll
+        function initAnimations() {
             const observerOptions = { threshold: 0.1 };
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('active');
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
                 });
             }, observerOptions);
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
+        // Gestão de Modais
         const modalData = {
             terms: { title: "Termos de Venda", content: "<h4>1. Uso do Website</h4><p>Deve ter pelo menos a idade de maioridade no seu estado de residência para usar este site. Os produtos destinam-se apenas a uso pessoal.</p><h4>2. Distribuição</h4><p>Somos um distribuidor autorizado da fórmula GlycoPezil. A revenda é proibida.</p><h4>3. Isenção de Responsabilidade</h4><p>As declarações não foram avaliadas pela FDA. Os produtos não substituem o aconselhamento médico profissional.</p>" },
             privacy: { title: "Política de Privacidade", content: "<h4>Recolha de Dados</h4><p>Recolhemos informações de encomenda para processar a sua compra. O pagamento é processado por entidades em conformidade com PCI.</p><h4>Os Seus Direitos</h4><p>Pode solicitar a eliminação ou acesso aos dados a qualquer momento contactando o nosso email de suporte.</p>" },
             shipping: { title: "Política de Envio", content: "<h4>Entrega</h4><p>As encomendas são enviadas em 2-3 dias úteis. A entrega demora normalmente 5-8 dias úteis. Receberá um número de rastreio por email.</p>" },
             returns: { title: "Política de Devoluções", content: "<h4>Garantia de 60 Dias</h4><p>Os reembolsos requerem a devolução de todos os recipientes. Contacte support@glycopezil.com para obter um comprovativo de devolução antes do envio.</p>" },
-            contact: { title: "Contacte-nos", content: "<div class='text-center py-6'><p class='font-bold text-lg'>(855) 212-8068</p><p class='text-gray-500 mb-6'>support@glycopezil.com</p><p class='text-xs'>Segunda – Domingo: 8:00 AM – 5:00 PM EST</p></div>" }
+            contact: { title: "Contacte-nos", content: "<div class='text-center py-6'><p class='font-black text-3xl text-brand-primary mb-2'>(855) 212-8068</p><p class='text-gray-500 mb-8 text-lg font-bold'>support@glycopezil.com</p><p class='text-[10px] uppercase font-black tracking-widest text-gray-400'>Segunda – Domingo: 8:00 AM – 5:00 PM EST</p></div>" }
         };
 
         function openModal(type) {
@@ -328,13 +304,15 @@
             document.getElementById('policy-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
+
         function closeModal() {
             document.getElementById('policy-modal').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
 
+        // Eventos Globais
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-        window.addEventListener('DOMContentLoaded', initApp);
+        window.addEventListener('DOMContentLoaded', initAnimations);
     </script>
 </body>
 </html>
