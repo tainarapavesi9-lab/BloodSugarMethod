@@ -115,7 +115,7 @@
         PORTES GRÁTIS EM TODAS AS ENCOMENDAS HOJE!
     </div>
 
-    <!-- Header com Alinhamento Refinado -->
+    <!-- Header -->
     <header class="sticky top-0 bg-white/90 backdrop-blur-lg z-40 border-b border-gray-100">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center max-w-7xl">
             <div class="flex items-center gap-3">
@@ -129,12 +129,11 @@
     </header>
 
     <main>
-        <!-- SECÇÃO HERO COM FORMATAÇÃO MELHORADA -->
+        <!-- SECÇÃO HERO -->
         <section id="order" class="hero-gradient overflow-hidden min-h-[85vh] flex items-center">
             <div class="container mx-auto px-6 py-12 md:py-24 max-w-7xl">
                 <div class="flex flex-col lg:grid lg:grid-cols-12 lg:items-center gap-12 md:gap-20">
                     
-                    <!-- 1. CONTEÚDO TEXTUAL (7 COLUNAS EM DESKTOP) -->
                     <div class="w-full text-center lg:text-left reveal lg:col-span-7">
                         <div class="inline-flex items-center gap-2 bg-purple-50 px-5 py-2 rounded-full border border-purple-100 mb-8 mx-auto lg:mx-0">
                             <div class="flex text-amber-400">
@@ -155,7 +154,6 @@
                             Descubra uma forma natural de apoiar o conforto interno e o equilíbrio quotidiano. A nossa fórmula avançada foi concebida para promover uma função saudável e ajudá-lo a manter-se vitalizado.
                         </p>
 
-                        <!-- CAIXA CTA INTEGRADA NO FLOW -->
                         <div class="max-w-md mx-auto lg:mx-0">
                             <div class="space-y-4">
                                 <a href="https://6pcb7.doctorimpact.com/l" class="cta-btn flex items-center justify-between bg-brand-primary text-white px-8 py-5 rounded-2xl font-extrabold group text-base md:text-lg">
@@ -178,20 +176,16 @@
                         </div>
                     </div>
 
-                    <!-- 2. IMAGEM DO PRODUTO (5 COLUNAS EM DESKTOP) -->
                     <div class="w-full flex justify-center lg:justify-end reveal lg:col-span-5 mt-8 lg:mt-0">
                         <div class="relative group">
-                            <!-- Efeito de Aura em Camadas -->
                             <div class="absolute inset-0 bg-brand-primary/20 rounded-full scale-110 blur-3xl opacity-30 group-hover:opacity-50 transition-opacity"></div>
                             <div class="absolute inset-0 bg-brand-secondary/40 rounded-full scale-75 blur-2xl opacity-40"></div>
                             
-                            <!-- Imagem Principal -->
                             <img src="images/glycopezil.png" 
                                  alt="GlycoPezil Suplemento" 
                                  class="relative z-10 w-full max-w-[320px] md:max-w-[480px] h-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.15)] animate-float"
                                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
                             
-                            <!-- Fallback UI elegante -->
                             <div class="hidden relative z-10 w-[260px] md:w-[400px] aspect-[3/4] bg-white rounded-[3rem] shadow-2xl items-center justify-center p-12 border border-purple-50 animate-float">
                                 <div class="text-center">
                                     <div class="w-28 h-28 md:w-44 md:h-44 bg-brand-primary/5 rounded-full mx-auto flex items-center justify-center mb-8">
@@ -209,19 +203,21 @@
         </section>
     </main>
 
-    <!-- Footer com Espaçamento Ajustado -->
+    <!-- Footer com Alinhamento Otimizado -->
     <footer class="bg-[#0b0614] text-gray-400 py-20">
-        <div class="container mx-auto px-6 max-w-7xl">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 mb-16">
+        <div class="container mx-auto px-6 max-w-7xl text-center md:text-left">
+            <div class="flex flex-col md:flex-row justify-between items-center md:items-center gap-10 mb-16">
                 <div class="flex items-center gap-3">
                     <div class="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center text-white/50 font-black">G</div>
                     <span class="font-extrabold text-2xl tracking-tight text-white/60">GlycoPezil</span>
                 </div>
-                <nav class="flex flex-wrap gap-x-8 gap-y-4 text-[12px] font-bold uppercase tracking-widest">
-                    <button onclick="openModal('terms')" class="hover:text-white transition-colors">Termos de Venda</button>
-                    <button onclick="openModal('privacy')" class="hover:text-white transition-colors">Privacidade</button>
-                    <button onclick="openModal('shipping')" class="hover:text-white transition-colors">Envio</button>
-                    <button onclick="openModal('returns')" class="hover:text-white transition-colors">Devoluções</button>
+                <!-- Links Ordenados Conforme Solicitado -->
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[11px] font-bold uppercase tracking-widest">
+                    <button onclick="openModal('privacy')" class="hover:text-white transition-colors">Política de Privacidade</button>
+                    <button onclick="openModal('terms')" class="hover:text-white transition-colors">Termos & Condições</button>
+                    <button onclick="openModal('returns')" class="hover:text-white transition-colors">Política de Reembolso</button>
+                    <button onclick="openModal('shipping')" class="hover:text-white transition-colors">Política de Envio</button>
+                    <button onclick="openModal('disclaimer')" class="hover:text-white transition-colors">Disclaimer</button>
                     <button onclick="openModal('contact')" class="hover:text-white transition-colors">Contacto</button>
                 </nav>
             </div>
@@ -229,16 +225,15 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 text-[11px] border-t border-gray-800/50 pt-16">
                 <div class="space-y-6">
                     <div>
-                        <p class="text-gray-500 uppercase font-black text-[9px] mb-4 tracking-widest">Distribuição Oficial</p>
-                        <p class="font-bold text-gray-200 text-sm">GlycoPezil Global Distribution Partner</p>
-                        <p class="mt-2">30 N Gould St, Sheridan, WY 82801, USA</p>
-                        <p class="mt-1">Apoio: (855) 212-8068 | <span class="text-brand-secondary">support@glycopezil.com</span></p>
+                        <p class="text-gray-500 uppercase font-black text-[9px] mb-4 tracking-widest">Apoio ao Cliente</p>
+                        <p class="font-bold text-gray-200 text-sm">E-mail: support@customercs.com</p>
+                        <p class="mt-4 text-gray-500">Estamos comprometidos em fornecer produtos de qualidade e excelente suporte ao cliente.</p>
                     </div>
                 </div>
                 <div class="space-y-8 leading-relaxed opacity-70">
                     <p class="border-l-2 border-brand-primary pl-6">
                         <strong class="text-gray-300 block mb-2 uppercase text-[9px] tracking-widest font-black">Aviso FDA:</strong>
-                        Estas declarações não foram avaliadas pela Food and Drug Administration. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença.
+                        Estas declarações não foram avaliadas pela Food and Drug Administration. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença. Os resultados individuais podem variar.
                     </p>
                     <p>
                         <strong class="text-gray-300 block mb-2 uppercase text-[9px] tracking-widest font-black">Divulgação Publicitária:</strong>
@@ -272,10 +267,8 @@
     </div>
 
     <script>
-        // Inicializar ícones
         feather.replace();
 
-        // Animações ao Scroll
         function initAnimations() {
             const observerOptions = { threshold: 0.1 };
             const observer = new IntersectionObserver((entries) => {
@@ -288,13 +281,31 @@
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
         }
 
-        // Gestão de Modais
         const modalData = {
-            terms: { title: "Termos de Venda", content: "<h4>1. Uso do Website</h4><p>Deve ter pelo menos a idade de maioridade no seu estado de residência para usar este site. Os produtos destinam-se apenas a uso pessoal.</p><h4>2. Distribuição</h4><p>Somos um distribuidor autorizado da fórmula GlycoPezil. A revenda é proibida.</p><h4>3. Isenção de Responsabilidade</h4><p>As declarações não foram avaliadas pela FDA. Os produtos não substituem o aconselhamento médico profissional.</p>" },
-            privacy: { title: "Política de Privacidade", content: "<h4>Recolha de Dados</h4><p>Recolhemos informações de encomenda para processar a sua compra. O pagamento é processado por entidades em conformidade com PCI.</p><h4>Os Seus Direitos</h4><p>Pode solicitar a eliminação ou acesso aos dados a qualquer momento contactando o nosso email de suporte.</p>" },
-            shipping: { title: "Política de Envio", content: "<h4>Entrega</h4><p>As encomendas são enviadas em 2-3 dias úteis. A entrega demora normalmente 5-8 dias úteis. Receberá um número de rastreio por email.</p>" },
-            returns: { title: "Política de Devoluções", content: "<h4>Garantia de 60 Dias</h4><p>Os reembolsos requerem a devolução de todos os recipientes. Contacte support@glycopezil.com para obter um comprovativo de devolução antes do envio.</p>" },
-            contact: { title: "Contacte-nos", content: "<div class='text-center py-6'><p class='font-black text-3xl text-brand-primary mb-2'>(855) 212-8068</p><p class='text-gray-500 mb-8 text-lg font-bold'>support@glycopezil.com</p><p class='text-[10px] uppercase font-black tracking-widest text-gray-400'>Segunda – Domingo: 8:00 AM – 5:00 PM EST</p></div>" }
+            terms: { 
+                title: "Termos e Condições", 
+                content: "<h4>Uso do Website</h4><p>Ao aceder e utilizar este website, concorda em cumprir e estar vinculado aos seguintes termos e condições. A informação fornecida é apenas para fins informativos gerais e não constitui aconselhamento médico.</p><h4>Isenção de Responsabilidade Médica</h4><p>Os produtos oferecidos são suplementos alimentares e não se destinam a diagnosticar, tratar, curar ou prevenir qualquer doença. Deve consultar um profissional de saúde qualificado antes de usar qualquer suplemento, especialmente se estiver grávida, a amamentar ou a tomar medicação.</p><h4>Encomendas e Exatidão</h4><p>Reservamo-nos o direito de recusar ou cancelar qualquer encomenda por motivos de disponibilidade, erros de preço ou atividade suspeita.</p>" 
+            },
+            privacy: { 
+                title: "Política de Privacidade", 
+                content: "<h4>Recolha de Informação</h4><p>Recolhemos informações pessoais como nome, e-mail e dados de faturação para processar encomendas e fornecer suporte. Não vendemos nem partilhamos as suas informações com terceiros, exceto o necessário para completar transações.</p><h4>Segurança</h4><p>Todas as transações são processadas através de sistemas de pagamento seguros para proteger a sua informação pessoal.</p>" 
+            },
+            shipping: { 
+                title: "Política de Envio", 
+                content: "<h4>Processamento</h4><p>As encomendas são processadas no prazo de 1 a 3 dias úteis após a confirmação do pagamento. Os tempos de entrega variam conforme a localização e a transportadora.</p><h4>Rastreio</h4><p>Os clientes receberão informações de rastreio assim que a encomenda for enviada. Taxas e estimativas de entrega são exibidas no checkout.</p>" 
+            },
+            returns: { 
+                title: "Política de Reembolso", 
+                content: "<h4>Garantia de 60 Dias</h4><p>Apoiamos a qualidade dos nossos produtos. Pode solicitar um reembolso no prazo de 60 dias a partir da data de compra.</p><h4>Condições de Elegibilidade</h4><p>Para ser elegível para um reembolso, os clientes devem utilizar o produto por pelo menos 30 dias antes de submeter um pedido. Isso permite tempo suficiente para avaliar devidamente os resultados.</p><h4>Processo</h4><p>Contacte a nossa equipa de suporte para iniciar o processo. Assim que os itens devolvidos forem recebidos e inspecionados, o reembolso será processado no método de pagamento original.</p>" 
+            },
+            disclaimer: { 
+                title: "Disclaimer / Aviso Legal", 
+                content: "<h4>FDA</h4><p>As declarações contidas neste website não foram avaliadas pela Food and Drug Administration. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença.</p><h4>Resultados</h4><p>Os resultados individuais podem variar. A informação aqui contida não substitui a consulta com um profissional de saúde qualificado.</p>" 
+            },
+            contact: { 
+                title: "Contacto", 
+                content: "<div class='text-center py-6'><p class='font-black text-2xl text-brand-primary mb-2'>Suporte ao Cliente</p><p class='text-gray-500 mb-8 text-lg font-bold'>support@customercs.com</p><p class='text-[10px] uppercase font-black tracking-widest text-gray-400'>Estamos aqui para ajudar com qualquer questão sobre a sua encomenda.</p></div>" 
+            }
         };
 
         function openModal(type) {
@@ -310,7 +321,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Eventos Globais
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
         window.addEventListener('DOMContentLoaded', initAnimations);
     </script>
