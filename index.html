@@ -73,7 +73,7 @@
 
         /* HEADER */
         header { 
-            padding: 1.25rem 0; 
+            padding: 1rem 0; 
             position: relative; 
             z-index: 50; 
             background-color: var(--header-bg);
@@ -83,7 +83,7 @@
         /* HERO - TIGHTER ALIGNMENT */
         .hero-section {
             padding-top: 1.5rem;
-            padding-bottom: 4rem;
+            padding-bottom: 3rem;
             position: relative;
             z-index: 10;
         }
@@ -138,10 +138,9 @@
             display: flex; align-items: center; justify-content: center;
         }
 
-        /* WATCH VIDEO - DEFINED BORDER */
         .btn-video {
             background: #F8FAFC; 
-            border: 2px solid #CBD5E1; /* Borda definida como solicitado */
+            border: 2px solid #CBD5E1;
             color: #1E293B;
             padding: 0.85rem 1.5rem;
             border-radius: 99px;
@@ -154,15 +153,10 @@
             width: 100%;
             max-width: 350px;
             margin-top: 1rem;
-            transition: all 0.25s ease;
+            transition: all 0.2s ease;
             text-decoration: none;
         }
-        .btn-video:hover { 
-            background: #F1F5F9; 
-            border-color: #94A3B8; /* Borda escurece no hover */
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
+        .btn-video:hover { background: #F1F5F9; border-color: #94A3B8; transform: translateY(-1px); }
 
         /* PRODUCT IMAGE */
         .product-image {
@@ -176,26 +170,26 @@
             50% { transform: translateY(-10px); }
         }
 
-        /* FOOTER */
+        /* FOOTER - NARROWER CONFIGURATION */
         footer {
             background-color: var(--footer-bg);
             color: #94A3B8;
-            padding: 5rem 0;
-            margin-top: 4rem;
+            padding: 3rem 0; /* Reduced from 5rem */
+            margin-top: 2rem; /* Reduced from 4rem */
             position: relative;
             z-index: 50;
         }
-        .footer-logo { color: white; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+        .footer-logo { color: white; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; }
         .fda-text-box {
             background: rgba(255,255,255,0.02);
-            padding: 2rem;
-            border-radius: 16px;
+            padding: 1.25rem; /* Reduced padding */
+            border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.05);
-            font-size: 11px;
-            line-height: 1.7;
+            font-size: 10.5px; /* Slightly smaller text */
+            line-height: 1.6;
         }
         .footer-nav-link {
-            font-size: 11px;
+            font-size: 10px; /* More compact */
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
@@ -216,13 +210,15 @@
                 text-align: center;   
             }
             .hero-badge-container { order: 1; margin-bottom: 1rem; justify-content: center; width: 100%; }
-            .hero-title-block { order: 2; margin-bottom: 1.5rem; width: 100%; }
-            .product-image-container { order: 3; margin: 1rem 0 2rem 0; display: flex; justify-content: center; width: 100%; } /* FOTO DEPOIS DO TITULO */
+            .hero-title-block { order: 2; margin-bottom: 1rem; width: 100%; }
+            .product-image-container { order: 3; margin: 1rem 0 2rem 0; display: flex; justify-content: center; width: 100%; }
             .hero-description { order: 4; margin: 0 auto 2rem auto; max-width: 90%; }
             .cta-container { order: 5; display: flex; flex-direction: column; align-items: center; width: 100%; }
-            .trust-row { order: 6; justify-content: center; margin-top: 3.5rem; opacity: 0.5; width: 100%; }
+            .trust-row { order: 6; justify-content: center; margin-top: 3rem; opacity: 0.5; width: 100%; }
             
             .btn-buy, .btn-video { margin-left: auto; margin-right: auto; }
+            
+            footer { padding: 2.5rem 0; }
         }
     </style>
 </head>
@@ -314,22 +310,22 @@
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer - Narrower & Optimized -->
     <footer>
         <div class="container-site">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
-                <div class="lg:col-span-4 space-y-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
+                <div class="lg:col-span-4 space-y-4">
                     <span class="footer-logo uppercase">GLYCOPEZIL</span>
-                    <p class="text-[13px] leading-relaxed max-w-xs text-slate-400">
+                    <p class="text-[12px] leading-relaxed max-w-xs text-slate-500">
                         Committed to providing premium quality products and excellent customer support 7 days a week.
                     </p>
-                    <div class="space-y-1">
-                        <p class="text-[9px] uppercase font-bold tracking-widest text-slate-600">Customer Assistance</p>
-                        <p class="text-base font-bold text-white selection:bg-brand-purple">support@customercs.com</p>
+                    <div class="space-y-0.5">
+                        <p class="text-[8px] uppercase font-bold tracking-widest text-slate-700">Customer Assistance</p>
+                        <p class="text-sm font-bold text-white selection:bg-brand-purple">support@customercs.com</p>
                     </div>
                 </div>
                 
-                <div class="lg:col-span-8 space-y-8">
+                <div class="lg:col-span-8">
                     <div class="fda-text-box text-slate-400">
                         <p class="italic text-justify">
                             <strong>FDA Disclaimer:</strong> The statements on this website have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any supplement routine. All trademarks are the property of their respective owners.
@@ -338,9 +334,9 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom -->
-            <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
-                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+            <!-- Compact Bottom Bar -->
+            <div class="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
                     <button onclick="openModal('privacy')" class="footer-nav-link">Privacy Policy</button>
                     <button onclick="openModal('terms')" class="footer-nav-link">Terms & Conditions</button>
                     <button onclick="openModal('returns')" class="footer-nav-link">Refund Policy</button>
