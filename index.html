@@ -23,7 +23,7 @@
     <!-- EXTERNAL TRACKING SCRIPT -->
     <script src="https://cdn.raadsgate.com/code/8300-bd78ddee-305e-4e3c-87e1-b47e1f19de66"></script>
 
-    <!-- FAVICON (Folder images) -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="images/faviconV2.png">
     <link rel="shortcut icon" type="image/png" href="images/faviconV2.png">
 
@@ -71,20 +71,9 @@
         }
 
         /* HEADER */
-        header { padding: 1.5rem 0; position: relative; z-index: 50; }
-        .store-badge {
-            background: rgba(248, 250, 252, 0.8);
-            border: 1px solid #F1F5F9;
-            padding: 0.5rem 1.25rem;
-            border-radius: 99px;
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--brand-muted);
-        }
+        header { padding: 2rem 0; position: relative; z-index: 50; }
 
-        /* HERO - PROPORTIONAL & TIGHT */
+        /* HERO SECTION */
         .hero-section {
             padding-top: 1rem;
             padding-bottom: 4rem;
@@ -115,7 +104,7 @@
             display: block;
         }
 
-        /* BUTTONS - SOLID */
+        /* BUTTONS */
         .btn-buy {
             background-color: var(--brand-primary);
             color: white;
@@ -199,16 +188,17 @@
         }
         .footer-nav-link:hover { color: white; }
 
-        /* REORDER LOGIC FOR MOBILE: BADGE -> TITLE -> PHOTO -> DESCRIPTION -> CTAs */
+        /* MOBILE CENTRALIZED CONFIGURATION */
         @media (max-width: 1024px) {
             .hero-content-wrapper {
                 display: flex;
                 flex-direction: column;
-                text-align: center;
+                align-items: center; /* Centraliza horizontalmente */
+                text-align: center;   /* Centraliza texto */
             }
-            .hero-badge-container { order: 1; margin-bottom: 1rem; }
+            .hero-badge-container { order: 1; margin-bottom: 1.5rem; justify-content: center; }
             .hero-title-block { order: 2; margin-bottom: 1.5rem; }
-            .product-image-container { order: 3; margin: 1rem 0 2.5rem 0; } /* PHOTO AFTER TITLE */
+            .product-image-container { order: 3; margin: 0.5rem 0 2rem 0; display: flex; justify-content: center; width: 100%; }
             .hero-description { order: 4; margin: 0 auto 2.5rem auto; max-width: 90%; }
             .cta-container { order: 5; display: flex; flex-direction: column; align-items: center; width: 100%; }
             .trust-row { order: 6; justify-content: center; margin-top: 3.5rem; opacity: 0.5; }
@@ -223,20 +213,17 @@
 
     <!-- Header -->
     <header>
-        <div class="container-site flex justify-between items-center">
+        <div class="container-site">
             <span class="font-extrabold text-2xl tracking-tighter text-brand-text uppercase">GLYCOPEZIL</span>
-            <div class="hidden sm:block">
-                <div class="store-badge">Certified Official Store</div>
-            </div>
         </div>
     </header>
 
     <main class="hero-section">
         <div class="container-site">
-            <!-- Grid setup -->
+            <!-- Grid for Desktop, Centered Flex for Mobile -->
             <div class="hero-content-wrapper lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
                 
-                <!-- CONTENT AREA -->
+                <!-- TEXT CONTENT AREA -->
                 <div class="lg:col-span-7 flex flex-col">
                     
                     <!-- Trust Badge -->
@@ -246,7 +233,7 @@
                         </span>
                     </div>
 
-                    <!-- Headline (Compact & Aligned) -->
+                    <!-- Headline (Impactful & Tight) -->
                     <div class="hero-title-block lg:text-left">
                         <span class="title-line">Daily Support</span>
                         <span class="title-line">For</span>
@@ -255,9 +242,9 @@
                         <span class="title-sub">With GlycoPezil</span>
                     </div>
 
-                    <!-- PHOTO (Mobile Only: Appears here | Desktop: Hidden) -->
+                    <!-- MOBILE PHOTO (order-3, after title) -->
                     <div class="product-image-container lg:hidden">
-                        <img src="images/glycopezil.png" alt="GlycoPezil Bottle" class="product-image max-w-[300px]">
+                        <img src="images/glycopezil.png" alt="GlycoPezil Bottle" class="product-image max-w-[280px]">
                     </div>
                     
                     <!-- Description -->
@@ -297,7 +284,7 @@
                     </div>
                 </div>
 
-                <!-- Desktop Photo (Hidden on Mobile) -->
+                <!-- DESKTOP PHOTO (Hidden on Mobile) -->
                 <div class="hidden lg:flex lg:col-span-5 justify-end">
                     <img src="images/glycopezil.png" 
                          alt="GlycoPezil Formula" 
@@ -308,7 +295,7 @@
         </div>
     </main>
 
-    <!-- Footer: Compliant & Premium -->
+    <!-- Footer -->
     <footer>
         <div class="container-site">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
@@ -332,7 +319,7 @@
                 </div>
             </div>
 
-            <!-- Footer Bottom -->
+            <!-- Bottom Bar -->
             <div class="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
                 <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4">
                     <button onclick="openModal('privacy')" class="footer-nav-link">Privacy Policy</button>
@@ -368,11 +355,11 @@
         feather.replace();
 
         const modalData = {
-            privacy: { title: "Privacy Policy", content: "<h4>Privacy</h4><p>We respect your privacy. Data collected is used solely for order processing and internal customer support. We do not sell your personal information.</p>" },
-            terms: { title: "Terms & Conditions", content: "<h4>Terms</h4><p>By using this website, you agree to our terms of service. Products are dietary supplements and not intended as medical advice.</p>" },
-            returns: { title: "Refund Policy", content: "<h4>60-Day Guarantee</h4><p>Not satisfied? Request a refund within 60 days. We suggest using the product for 30 days first to see potential results.</p>" },
-            shipping: { title: "Shipping Policy", content: "<h4>Shipping</h4><p>Orders process within 1-3 business days. Delivery times vary by location and carrier volume.</p>" },
-            contact: { title: "Contact Us", content: "<h4>Contact</h4><p>Email: support@customercs.com. Our support team is active 7 days a week.</p>" }
+            privacy: { title: "Privacy Policy", content: "<h4>Privacy</h4><p>We respect your privacy. Data collected is used solely for order processing and internal customer support. We do not sell your personal information to third parties.</p>" },
+            terms: { title: "Terms & Conditions", content: "<h4>Terms</h4><p>By using this website, you agree to comply with our terms. Products are dietary supplements and not intended as medical advice.</p>" },
+            returns: { title: "Refund Policy", content: "<h4>60-Day Guarantee</h4><p>Not satisfied? Request a refund within 60 days from the date of purchase. Please use the product for at least 30 days before requesting a refund.</p>" },
+            shipping: { title: "Shipping Policy", content: "<h4>Shipping</h4><p>Orders are processed within 1-3 business days. Delivery times vary by location and carrier volume.</p>" },
+            contact: { title: "Contact Us", content: "<h4>Contact</h4><p>Email: support@customercs.com. Our support team is active 7 days a week to assist you.</p>" }
         };
 
         function openModal(type) {
