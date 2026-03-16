@@ -41,6 +41,7 @@
             --brand-muted: #64748B;
             --footer-bg: #0A0712;
             --bg-accent: rgba(124, 58, 237, 0.04);
+            --header-bg: #31165B; /* Cor solicitada */
         }
         
         body { 
@@ -70,12 +71,18 @@
             padding: 0 1.5rem;
         }
 
-        /* HEADER */
-        header { padding: 2rem 0; position: relative; z-index: 50; }
+        /* HEADER - FIXED COLOR & Z-INDEX */
+        header { 
+            padding: 1.25rem 0; 
+            position: relative; 
+            z-index: 50; 
+            background-color: var(--header-bg); /* Fundo #31165B */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
 
-        /* HERO SECTION */
+        /* HERO - PROPORTIONAL & TIGHT */
         .hero-section {
-            padding-top: 1rem;
+            padding-top: 2rem;
             padding-bottom: 4rem;
             position: relative;
             z-index: 10;
@@ -193,13 +200,13 @@
             .hero-content-wrapper {
                 display: flex;
                 flex-direction: column;
-                align-items: center; /* Centraliza horizontalmente */
-                text-align: center;   /* Centraliza texto */
+                align-items: center; 
+                text-align: center;   
             }
-            .hero-badge-container { order: 1; margin-bottom: 1.5rem; justify-content: center; }
+            .hero-badge-container { order: 1; margin-bottom: 1rem; justify-content: center; }
             .hero-title-block { order: 2; margin-bottom: 1.5rem; }
-            .product-image-container { order: 3; margin: 0.5rem 0 2rem 0; display: flex; justify-content: center; width: 100%; }
-            .hero-description { order: 4; margin: 0 auto 2.5rem auto; max-width: 90%; }
+            .product-image-container { order: 3; margin: 1rem 0 2.5rem 0; display: flex; justify-content: center; width: 100%; }
+            .hero-description { order: 4; margin: 0 auto 2rem auto; max-width: 90%; }
             .cta-container { order: 5; display: flex; flex-direction: column; align-items: center; width: 100%; }
             .trust-row { order: 6; justify-content: center; margin-top: 3.5rem; opacity: 0.5; }
             
@@ -214,7 +221,7 @@
     <!-- Header -->
     <header>
         <div class="container-site">
-            <span class="font-extrabold text-2xl tracking-tighter text-brand-text uppercase">GLYCOPEZIL</span>
+            <span class="font-extrabold text-2xl tracking-tighter text-white uppercase">GLYCOPEZIL</span>
         </div>
     </header>
 
@@ -227,7 +234,7 @@
                 <div class="lg:col-span-7 flex flex-col">
                     
                     <!-- Trust Badge -->
-                    <div class="hero-badge-container inline-flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-gray-100 mx-auto lg:mx-0 lg:mb-8">
+                    <div class="hero-badge-container inline-flex items-center bg-white/80 backdrop-blur-sm px-3 py-1.5 rounded-lg border border-gray-100 mx-auto lg:mx-0 lg:mb-8 shadow-sm">
                         <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
                             <span class="text-amber-400">★★★★★</span> TRUSTED BY 1,900+ HAPPY CUSTOMERS
                         </span>
@@ -356,7 +363,7 @@
 
         const modalData = {
             privacy: { title: "Privacy Policy", content: "<h4>Privacy</h4><p>We respect your privacy. Data collected is used solely for order processing and internal customer support. We do not sell your personal information to third parties.</p>" },
-            terms: { title: "Terms & Conditions", content: "<h4>Terms</h4><p>By using this website, you agree to comply with our terms. Products are dietary supplements and not intended as medical advice.</p>" },
+            terms: { title: "Terms & Conditions", content: "<h4>Terms</h4><p>By using this website, you agree to our terms of service. Products are dietary supplements and not intended as medical advice.</p>" },
             returns: { title: "Refund Policy", content: "<h4>60-Day Guarantee</h4><p>Not satisfied? Request a refund within 60 days from the date of purchase. Please use the product for at least 30 days before requesting a refund.</p>" },
             shipping: { title: "Shipping Policy", content: "<h4>Shipping</h4><p>Orders are processed within 1-3 business days. Delivery times vary by location and carrier volume.</p>" },
             contact: { title: "Contact Us", content: "<h4>Contact</h4><p>Email: support@customercs.com. Our support team is active 7 days a week to assist you.</p>" }
