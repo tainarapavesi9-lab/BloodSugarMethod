@@ -41,7 +41,6 @@
             --brand-muted: #64748B;
             --footer-bg: #0A0712;
             --header-bg: #31165B;
-            --bg-accent: rgba(124, 58, 237, 0.04);
         }
         
         body { 
@@ -53,16 +52,18 @@
             margin: 0;
         }
 
-        /* Ambient Background Color */
+        /* Ambient Color Mesh Background */
         .ambient-layer {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            z-index: 0; pointer-events: none;
-            background: 
-                radial-gradient(at 0% 0%, var(--bg-accent) 0, transparent 40%),
-                radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.03) 0, transparent 30%),
-                radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.8) 0, transparent 100%),
-                radial-gradient(at 100% 100%, var(--bg-accent) 0, transparent 40%);
+            z-index: -1;
+            pointer-events: none;
+            background-color: #fcfaff;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.12) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.05) 0, transparent 40%),
+                radial-gradient(at 100% 100%, rgba(47, 21, 87, 0.08) 0, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(199, 210, 254, 0.15) 0, transparent 50%);
         }
 
         .container-site {
@@ -71,19 +72,19 @@
             padding: 0 1.5rem;
         }
 
-        /* HEADER - FIXED COLOR #31165B */
+        /* HEADER */
         header { 
             padding: 1.25rem 0; 
             position: relative; 
             z-index: 50; 
             background-color: var(--header-bg);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
         }
 
-        /* HERO - TIGHTER ALIGNMENT */
+        /* HERO SECTION */
         .hero-section {
-            padding-top: 1.5rem;
-            padding-bottom: 3rem;
+            padding-top: 2rem;
+            padding-bottom: 4rem;
             position: relative;
             z-index: 10;
         }
@@ -107,7 +108,7 @@
         .title-sub {
             font-size: clamp(1.3rem, 3.5vw, 2.4rem);
             font-weight: 800;
-            margin-top: 0.75rem;
+            margin-top: 1rem;
             display: block;
             color: var(--brand-text);
         }
@@ -126,7 +127,7 @@
             width: 100%;
             max-width: 350px;
             transition: all 0.3s ease;
-            box-shadow: 0 15px 30px rgba(47, 21, 87, 0.15);
+            box-shadow: 0 15px 30px rgba(47, 21, 87, 0.2);
             border: none;
             text-decoration: none;
         }
@@ -140,7 +141,7 @@
 
         .btn-video {
             background: #F8FAFC; 
-            border: 2px solid #CBD5E1;
+            border: 2px solid #CBD5E1; /* Borda definida */
             color: #1E293B;
             padding: 0.85rem 1.5rem;
             border-radius: 99px;
@@ -162,7 +163,7 @@
         .product-image {
             max-width: 100%;
             height: auto;
-            filter: drop-shadow(0 30px 40px rgba(47, 21, 87, 0.12));
+            filter: drop-shadow(0 30px 50px rgba(47, 21, 87, 0.15));
             animation: float 6s ease-in-out infinite;
         }
         @keyframes float {
@@ -170,7 +171,7 @@
             50% { transform: translateY(-10px); }
         }
 
-        /* FOOTER - NARROWER */
+        /* FOOTER */
         footer {
             background-color: var(--footer-bg);
             color: #94A3B8;
@@ -201,7 +202,7 @@
         }
         .footer-nav-link:hover { color: white; }
 
-        /* MOBILE CENTRALIZED & REORDERED */
+        /* MOBILE CENTRALIZED CONFIGURATION */
         @media (max-width: 1024px) {
             .hero-content-wrapper {
                 display: flex;
@@ -211,13 +212,12 @@
             }
             .hero-badge-container { order: 1; margin-bottom: 1rem; justify-content: center; width: 100%; }
             .hero-title-block { order: 2; margin-bottom: 1rem; width: 100%; }
-            .product-image-container { order: 3; margin: 1rem 0 2rem 0; display: flex; justify-content: center; width: 100%; }
+            .product-image-container { order: 3; margin: 1rem 0 2rem 0; display: flex; justify-content: center; width: 100%; } /* FOTO DEPOIS DO TITULO */
             .hero-description { order: 4; margin: 0 auto 2rem auto; max-width: 90%; }
             .cta-container { order: 5; display: flex; flex-direction: column; align-items: center; width: 100%; }
             .trust-row { order: 6; justify-content: center; margin-top: 3rem; opacity: 0.5; width: 100%; }
             
             .btn-buy, .btn-video { margin-left: auto; margin-right: auto; }
-            
             footer { padding: 2.5rem 0; }
         }
     </style>
@@ -235,7 +235,6 @@
 
     <main class="hero-section">
         <div class="container-site">
-            <!-- Grid setup: Desktop columns | Mobile Flex order -->
             <div class="hero-content-wrapper lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
                 
                 <!-- CONTENT AREA -->
@@ -257,7 +256,7 @@
                         <span class="title-sub">With GlycoPezil</span>
                     </div>
 
-                    <!-- MOBILE PHOTO (order-3, after title) - Using NEW IMAGE -->
+                    <!-- PHOTO (Mobile order-3, after title) -->
                     <div class="product-image-container lg:hidden">
                         <img src="images/glycopezil1.webp" alt="GlycoPezil Product" class="product-image max-w-[280px]">
                     </div>
@@ -268,7 +267,7 @@
                     </p>
 
                     <!-- CTA Buttons -->
-                    <div class="cta-container mb-12 lg:mt-8">
+                    <div class="cta-container mb-12 lg:mt-10">
                         <a href="https://6pcb7.doctorimpact.com/l" class="btn-buy">
                             <span>Get GlycoPezil Today</span>
                             <div class="cart-dot">
@@ -299,10 +298,10 @@
                     </div>
                 </div>
 
-                <!-- DESKTOP PHOTO (Hidden on Mobile) - Using NEW IMAGE -->
+                <!-- DESKTOP PHOTO (Hidden on Mobile) -->
                 <div class="hidden lg:flex lg:col-span-5 justify-end">
                     <img src="images/glycopezil1.webp" 
-                         alt="GlycoPezil Advanced Formula" 
+                         alt="GlycoPezil Formula" 
                          class="product-image max-w-[460px]">
                 </div>
 
@@ -310,7 +309,7 @@
         </div>
     </main>
 
-    <!-- Footer - Narrower & Optimized -->
+    <!-- Footer - Narrow & Optimized -->
     <footer>
         <div class="container-site">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
@@ -334,7 +333,7 @@
                 </div>
             </div>
 
-            <!-- Compact Bottom Bar -->
+            <!-- Bottom Bar -->
             <div class="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
                 <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
                     <button onclick="openModal('privacy')" class="footer-nav-link">Privacy Policy</button>
