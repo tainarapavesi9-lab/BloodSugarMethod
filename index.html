@@ -71,7 +71,7 @@
 
         /* HERO - TIGHT SPACING */
         .hero-section {
-            padding-top: 2rem;
+            padding-top: 1rem;
             padding-bottom: 4rem;
         }
 
@@ -82,7 +82,7 @@
 
         .title-line {
             display: block;
-            font-size: clamp(3rem, 7vw, 5.2rem);
+            font-size: clamp(2.8rem, 7vw, 5.2rem);
             font-weight: 800;
             color: var(--brand-text);
         }
@@ -92,7 +92,7 @@
         }
 
         .title-sub {
-            font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+            font-size: clamp(1.4rem, 3.5vw, 2.8rem);
             font-weight: 800;
             margin-top: 1rem;
             display: block;
@@ -111,39 +111,51 @@
             font-size: 1.05rem;
             width: 100%;
             max-width: 340px;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, background 0.2s ease;
             box-shadow: 0 15px 30px rgba(47, 21, 87, 0.2);
+            border: none;
         }
-        .btn-buy:hover { transform: translateY(-2px); }
+        .btn-buy:hover { transform: translateY(-2px); background-color: #3d1c71; }
+        
         .cart-dot {
             background: rgba(255, 255, 255, 0.15);
             width: 38px; height: 38px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
         }
 
+        /* Fixed Watch Video Button - More Solid */
         .btn-video {
-            background: white;
-            border: 1px solid #E2E8F0;
+            background: #F1F5F9; /* Solid light gray instead of transparent white */
+            border: 1px solid #CBD5E1;
+            color: #1E293B;
             padding: 0.85rem 1.5rem;
             border-radius: 99px;
             display: flex; align-items: center; justify-content: center;
             gap: 0.75rem; font-weight: 700; font-size: 1.05rem;
             width: 100%; max-width: 340px;
-            margin-top: 0.75rem;
-            transition: background 0.2s;
+            margin-top: 1rem;
+            transition: all 0.2s ease;
         }
-        .btn-video:hover { background: #F8FAFC; }
+        .btn-video:hover { 
+            background: #E2E8F0; 
+            border-color: #94A3B8;
+            transform: translateY(-1px);
+        }
 
         /* PRODUCT IMAGE */
+        .product-image-container {
+            display: flex;
+            justify-content: center;
+        }
         .product-image {
             max-width: 100%;
             height: auto;
-            filter: drop-shadow(0 40px 60px rgba(47, 21, 87, 0.15));
+            filter: drop-shadow(0 40px 60px rgba(47, 21, 87, 0.12));
             animation: float 6s ease-in-out infinite;
         }
         @keyframes float {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+            50% { transform: translateY(-8px); }
         }
 
         /* FOOTER */
@@ -167,15 +179,28 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            color: #475569;
+            color: #64748B;
             transition: color 0.2s;
+            background: none;
+            border: none;
+            cursor: pointer;
         }
         .footer-nav-link:hover { color: white; }
 
+        /* Responsive Mobile Layout Strategy */
         @media (max-width: 1024px) {
-            .hero-title-block { text-align: center; }
+            .hero-content-wrapper {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-title-block { text-align: center; order: 1; }
+            .hero-description { order: 2; margin-top: 1.5rem; }
+            .product-image-container { order: 3; margin: 2rem 0; }
+            .cta-container { order: 4; display: flex; flex-direction: column; align-items: center; width: 100%; }
+            .trust-row { order: 5; justify-content: center; margin-top: 2rem; }
+            
             .btn-buy, .btn-video { margin-left: auto; margin-right: auto; }
-            .trust-row { justify-content: center; }
         }
     </style>
 </head>
@@ -193,19 +218,21 @@
 
     <main class="hero-section">
         <div class="container-site">
-            <div class="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-8">
+            <!-- Grid for Desktop / Flex for Mobile -->
+            <div class="hero-content-wrapper lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center">
                 
-                <!-- Left Content -->
-                <div class="w-full lg:w-[60%] text-left">
+                <!-- Main Content Area -->
+                <div class="lg:col-span-7 flex flex-col">
+                    
                     <!-- Badge -->
-                    <div class="inline-flex items-center bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100 mb-6">
+                    <div class="inline-flex items-center bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-100 mb-6 mx-auto lg:mx-0 order-1">
                         <span class="text-[9px] font-black text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
                             <span class="text-amber-400">★★★★★</span> TRUSTED BY 1,900+ HAPPY CUSTOMERS
                         </span>
                     </div>
 
-                    <!-- Headline (Matching reference) -->
-                    <div class="hero-title-block mb-8">
+                    <!-- Headline -->
+                    <div class="hero-title-block mb-6 order-1">
                         <span class="title-line">Daily Support</span>
                         <span class="title-line">For</span>
                         <span class="title-line title-accent">Healthy Blood</span>
@@ -214,12 +241,17 @@
                     </div>
                     
                     <!-- Description -->
-                    <p class="text-base text-gray-500 mb-10 max-w-lg leading-relaxed font-medium">
+                    <p class="hero-description text-base text-gray-500 max-w-lg leading-relaxed font-medium mx-auto lg:mx-0 order-2 lg:mb-10">
                         Discover a natural way to support balanced blood sugar and daily metabolic health. Our advanced formula is designed to help maintain healthy glucose levels.
                     </p>
 
+                    <!-- Mobile Image (Hidden on Desktop) -->
+                    <div class="product-image-container lg:hidden order-3">
+                        <img src="images/glycopezil.png" alt="GlycoPezil Bottles" class="product-image max-w-[280px]">
+                    </div>
+
                     <!-- CTAs -->
-                    <div class="mb-12">
+                    <div class="cta-container mb-12 order-4">
                         <a href="https://6pcb7.doctorimpact.com/l" class="btn-buy">
                             <span>Get GlycoPezil Today</span>
                             <div class="cart-dot">
@@ -228,13 +260,13 @@
                         </a>
                         
                         <a href="https://txqcm.doctormedved.com/l" class="btn-video">
-                            <i data-feather="play-circle" class="w-5 h-5 text-gray-400"></i>
+                            <i data-feather="play-circle" class="w-5 h-5 text-brand-purple"></i>
                             Watch Video
                         </a>
                     </div>
 
                     <!-- Trust Checklist -->
-                    <div class="trust-row flex flex-wrap gap-x-6 gap-y-3 opacity-40">
+                    <div class="trust-row flex flex-wrap gap-x-6 gap-y-3 opacity-40 order-5">
                         <div class="flex items-center gap-1.5">
                             <i data-feather="check" class="w-3 h-3"></i>
                             <span class="text-[9px] font-bold uppercase tracking-widest">60-DAY GUARANTEE</span>
@@ -250,11 +282,11 @@
                     </div>
                 </div>
 
-                <!-- Right Side: Image -->
-                <div class="w-full lg:w-[40%] flex justify-center lg:justify-end">
+                <!-- Desktop Side: Image (Hidden on Mobile) -->
+                <div class="hidden lg:flex lg:col-span-5 justify-end">
                     <img src="images/glycopezil.png" 
                          alt="GlycoPezil Bottles" 
-                         class="product-image max-w-[320px] md:max-w-[440px]">
+                         class="product-image max-w-[420px]">
                 </div>
 
             </div>
@@ -287,7 +319,7 @@
 
             <!-- Bottom Bar -->
             <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-3">
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-3">
                     <button onclick="openModal('privacy')" class="footer-nav-link">Privacy Policy</button>
                     <button onclick="openModal('terms')" class="footer-nav-link">Terms & Conditions</button>
                     <button onclick="openModal('returns')" class="footer-nav-link">Refund Policy</button>
@@ -321,11 +353,11 @@
         feather.replace();
 
         const modalData = {
-            privacy: { title: "Privacy Policy", content: "We respect your privacy. Data collected is used solely for order processing and internal support." },
-            terms: { title: "Terms & Conditions", content: "By using this website, you agree to our terms of service. Products are sold as dietary supplements." },
-            returns: { title: "Refund Policy", content: "60-day money-back guarantee. Please use the product for at least 30 days before requesting a refund." },
-            shipping: { title: "Shipping Policy", content: "Orders are processed within 1-3 business days. Delivery times vary by location." },
-            contact: { title: "Contact", content: "Support Email: support@customercs.com. Response within 24 hours." }
+            privacy: { title: "Privacy Policy", content: "<h4>Privacy Policy</h4><p>We respect your privacy. Data collected is used solely for order processing and internal customer support. We do not sell or share your personal information with third parties.</p>" },
+            terms: { title: "Terms & Conditions", content: "<h4>Terms and Conditions</h4><p>By using this website, you agree to comply with our terms. Products are dietary supplements and are not intended as medical advice.</p>" },
+            returns: { title: "Refund Policy", content: "<h4>60-Day Guarantee</h4><p>We stand behind the quality of our products. You may request a refund within 60 days from the date of purchase. Please use the product for at least 30 days before requesting a refund.</p>" },
+            shipping: { title: "Shipping Policy", content: "<h4>Shipping Info</h4><p>Orders are processed within 1-3 business days. Delivery times vary depending on the destination and shipping carrier.</p>" },
+            contact: { title: "Contact", content: "<h4>Get In Touch</h4><p>Email us at support@customercs.com. Our dedicated team is available 7 days a week to assist you with any questions.</p>" }
         };
 
         function openModal(type) {
