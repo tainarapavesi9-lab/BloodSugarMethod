@@ -35,10 +35,11 @@
     <style>
         :root {
             --brand-primary: #2F1557;
-            --brand-bg: #FFFFFF;
-            --brand-text: #111827;
-            --brand-muted: #6B7280;
-            --footer-bg: #0F0A1A;
+            --brand-accent: #7C3AED;
+            --brand-success: #10B981;
+            --brand-bg: #FDFBFF;
+            --brand-text: #0F172A;
+            --brand-muted: #64748B;
         }
         
         body { 
@@ -49,186 +50,215 @@
             overflow-x: hidden;
         }
 
+        /* Ambient Professional Life */
+        .mesh-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0; pointer-events: none;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.08) 0, transparent 50%), 
+                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.05) 0, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(47, 21, 87, 0.05) 0, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(199, 210, 254, 0.1) 0, transparent 50%);
+        }
+
         .container-pro {
-            max-width: 1280px;
+            max-width: 1240px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
 
-        /* Responsive Typography */
+        /* Typography */
         .hero-title {
-            font-size: clamp(2.5rem, 6vw, 5.5rem);
-            line-height: 0.95;
+            font-size: clamp(2.5rem, 6.5vw, 5.5rem);
+            line-height: 1.02;
             font-weight: 800;
             letter-spacing: -0.04em;
         }
 
-        .hero-subtitle {
-            font-size: clamp(2rem, 5vw, 4rem);
-            line-height: 1.1;
-            font-weight: 800;
-            letter-spacing: -0.04em;
+        .text-gradient {
+            background: linear-gradient(135deg, #2F1557 0%, #7C3AED 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Button Refinement */
+        /* Modern Glass Cards */
+        .glass-badge {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            box-shadow: 0 4px 12px rgba(47, 21, 87, 0.03);
+        }
+
+        /* CTA Buttons */
         .btn-dtc {
-            background-color: var(--brand-primary);
+            background: linear-gradient(135deg, #2F1557 0%, #462082 100%);
             color: white;
-            padding: 1rem 1.5rem;
-            border-radius: 9999px;
+            padding: 1.125rem 1.75rem;
+            border-radius: 100px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.125rem;
             width: 100%;
             max-width: 360px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 15px -3px rgba(47, 21, 87, 0.2);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 12px 24px -8px rgba(47, 21, 87, 0.4);
         }
-        .btn-dtc:hover { transform: translateY(-2px); box-shadow: 0 20px 25px -5px rgba(47, 21, 87, 0.3); }
+        .btn-dtc:hover { 
+            transform: translateY(-4px) scale(1.01); 
+            box-shadow: 0 20px 32px -12px rgba(47, 21, 87, 0.5); 
+        }
         
-        .cart-circle {
-            background-color: rgba(255,255,255,0.15);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .cart-icon {
+            background: rgba(255, 255, 255, 0.15);
+            width: 44px; height: 44px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
         }
 
         .btn-vsl {
-            background-color: #FFFFFF;
-            border: 1px solid #E5E7EB;
-            color: #111827;
-            padding: 1rem 1.5rem;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            font-weight: 700;
-            font-size: 1.1rem;
-            width: 100%;
-            max-width: 360px;
-            transition: all 0.2s ease;
+            background: white;
+            border: 1px solid #E2E8F0;
+            color: var(--brand-text);
+            padding: 1.125rem 1.75rem;
+            border-radius: 100px;
+            display: flex; align-items: center; justify-content: center;
+            gap: 0.75rem; font-weight: 700; font-size: 1.125rem;
+            width: 100%; max-width: 360px;
+            transition: all 0.3s ease;
         }
-        .btn-vsl:hover { background-color: #F9FAFB; border-color: #D1D5DB; }
+        .btn-vsl:hover { border-color: var(--brand-accent); background-color: #F8FAFC; }
 
-        /* Dynamic Product Glow */
-        .glow-effect {
+        /* Product Image Presentation */
+        .product-visual {
+            position: relative;
+        }
+        .product-visual::after {
+            content: '';
             position: absolute;
-            width: 140%;
-            height: 140%;
-            background: radial-gradient(circle, rgba(47, 21, 87, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
-            top: 50%;
-            left: 50%;
+            top: 50%; left: 50%;
+            width: 140%; height: 140%;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.06) 0%, transparent 70%);
             transform: translate(-50%, -50%);
             z-index: 0;
-            filter: blur(50px);
         }
 
         .float-anim {
             animation: floating 6s ease-in-out infinite;
+            filter: drop-shadow(0 30px 50px rgba(47, 21, 87, 0.15));
         }
         @keyframes floating {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-12px); }
+            50% { transform: translateY(-15px); }
         }
 
-        /* Reveal Logic */
         .reveal { 
-            opacity: 0; 
-            transform: translateY(20px); 
-            transition: all 0.8s ease-out; 
+            opacity: 0; transform: translateY(30px); 
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1); 
         }
-        .reveal.active { 
-            opacity: 1; 
-            transform: translateY(0); 
-        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* Proportional spacing for mobile */
-        @media (max-width: 768px) {
-            .hero-title { text-align: center; }
-            .hero-subtitle { text-align: center; }
-            .btn-dtc, .btn-vsl { margin-left: auto; margin-right: auto; }
-        }
+        footer { background-color: #0A0712; }
     </style>
 </head>
 <body>
 
+    <div class="mesh-bg"></div>
+
     <!-- Header -->
-    <header class="py-8">
-        <div class="container-pro">
-            <span class="font-extrabold text-2xl tracking-tighter text-brand-text uppercase">GLYCOPEZIL</span>
+    <header class="relative z-50 py-8 px-6">
+        <div class="container-pro flex justify-between items-center">
+            <span class="font-extrabold text-2xl tracking-tighter text-brand-primary uppercase">GLYCOPEZIL</span>
+            <div class="hidden sm:block">
+                <div class="glass-badge px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-brand-muted">
+                    Certified Official Store
+                </div>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="py-12 md:py-20 overflow-hidden">
+    <main class="relative z-10">
+        <section class="py-12 md:py-24">
             <div class="container-pro">
                 <div class="flex flex-col lg:flex-row items-center justify-between gap-16 lg:gap-24">
                     
-                    <!-- Left Column: Content -->
-                    <div class="w-full lg:w-1/2 reveal active">
-                        <!-- Badge -->
-                        <div class="inline-flex items-center bg-gray-50 px-4 py-1.5 rounded-lg border border-gray-100 mb-8 mx-auto lg:mx-0">
-                            <span class="text-[10px] font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2">
-                                <span class="text-amber-400">★</span> TRUSTED BY 1,900+ HAPPY CUSTOMERS
+                    <!-- Left: Content Area -->
+                    <div class="w-full lg:w-[55%] text-center lg:text-left reveal active">
+                        <!-- Trust Badge -->
+                        <div class="glass-badge inline-flex items-center px-4 py-2 rounded-xl mb-8 mx-auto lg:mx-0">
+                            <span class="text-[10px] font-black text-brand-muted uppercase tracking-widest flex items-center gap-2">
+                                <span class="text-brand-success flex gap-0.5">
+                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                    <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                </span> 
+                                Trusted by 1,900+ happy customers
                             </span>
                         </div>
 
                         <!-- Headlines -->
-                        <div class="mb-8 space-y-2">
+                        <div class="mb-10">
                             <h1 class="hero-title text-brand-text">Daily Support</h1>
                             <h1 class="hero-title text-brand-text">For</h1>
-                            <h2 class="hero-subtitle text-brand-text mt-6">With <span class="text-brand-primary">GlycoPezil</span></h2>
+                            <h2 class="hero-title mt-4 sm:mt-6">
+                                <span class="text-gradient">Healthy Blood Sugar</span>
+                            </h2>
+                            <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-text mt-4">With GlycoPezil</h3>
                         </div>
                         
                         <!-- Description -->
-                        <p class="text-lg text-gray-500 mb-10 max-w-xl leading-relaxed font-medium mx-auto lg:mx-0">
-                            Discover a natural way to support balanced blood sugar and daily metabolic health. Our advanced formula is designed to help maintain healthy glucose levels and support your overall wellness routine.
+                        <p class="text-lg sm:text-xl text-brand-muted mb-12 max-w-xl mx-auto lg:mx-0 leading-relaxed font-medium">
+                            Discover a natural way to support balanced blood sugar and daily metabolic health. Our advanced formula is designed to help maintain healthy glucose levels.
                         </p>
 
                         <!-- Action Group -->
-                        <div class="space-y-4 mb-12">
-                            <a href="https://6pcb7.doctorimpact.com/l" class="btn-dtc">
+                        <div class="space-y-4 mb-14 max-w-sm mx-auto lg:mx-0">
+                            <a href="https://6pcb7.doctorimpact.com/l" class="btn-dtc group">
                                 <span>Get GlycoPezil Today</span>
-                                <div class="cart-circle">
+                                <div class="cart-icon group-hover:scale-110 transition-transform">
                                     <i data-feather="shopping-cart" class="w-5 h-5"></i>
                                 </div>
                             </a>
                             
                             <a href="https://txqcm.doctormedved.com/l" class="btn-vsl">
-                                <i data-feather="play-circle" class="w-5 h-5 text-gray-400"></i>
-                                Learn How It Works
+                                <i data-feather="play-circle" class="w-5 h-5 text-brand-accent"></i>
+                                Watch Video
                             </a>
                         </div>
 
                         <!-- Trust Markers -->
-                        <div class="flex flex-wrap justify-center lg:justify-start gap-x-8 gap-y-4 opacity-50">
-                            <div class="flex items-center gap-2">
-                                <i data-feather="check" class="w-4 h-4"></i>
-                                <span class="text-[9px] font-bold uppercase tracking-widest">60-DAY MONEY-BACK GUARANTEE</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 opacity-80 border-t border-slate-200/50 pt-10">
+                            <div class="flex items-center justify-center lg:justify-start gap-2.5">
+                                <div class="w-6 h-6 rounded-full bg-brand-success/10 flex items-center justify-center">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-brand-success"></i>
+                                </div>
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-brand-muted">60-Day Guarantee</span>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <i data-feather="check" class="w-4 h-4"></i>
-                                <span class="text-[9px] font-bold uppercase tracking-widest">MADE IN USA</span>
+                            <div class="flex items-center justify-center lg:justify-start gap-2.5">
+                                <div class="w-6 h-6 rounded-full bg-brand-success/10 flex items-center justify-center">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-brand-success"></i>
+                                </div>
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-brand-muted">Made in USA</span>
                             </div>
-                            <div class="flex items-center gap-2">
-                                <i data-feather="check" class="w-4 h-4"></i>
-                                <span class="text-[9px] font-bold uppercase tracking-widest">GMP CERTIFIED FACILITY</span>
+                            <div class="flex items-center justify-center lg:justify-start gap-2.5">
+                                <div class="w-6 h-6 rounded-full bg-brand-success/10 flex items-center justify-center">
+                                    <i data-feather="check" class="w-3.5 h-3.5 text-brand-success"></i>
+                                </div>
+                                <span class="text-[9px] font-bold uppercase tracking-widest text-brand-muted">GMP Facility</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Right Column: Image -->
-                    <div class="w-full lg:w-1/2 relative flex justify-center lg:justify-end reveal active">
-                        <div class="glow-effect"></div>
-                        <img src="images/glycopezil.png" 
-                             alt="GlycoPezil Advanced Formula" 
-                             class="relative z-10 w-full max-w-[440px] md:max-w-[520px] h-auto drop-shadow-2xl float-anim">
+                    <!-- Right: Product Presentation -->
+                    <div class="w-full lg:w-[40%] reveal active mt-12 lg:mt-0">
+                        <div class="product-visual flex justify-center lg:justify-end">
+                            <img src="images/glycopezil.png" 
+                                 alt="GlycoPezil Premium Supplement" 
+                                 class="w-full max-w-[320px] sm:max-w-[420px] lg:max-w-full h-auto float-anim relative z-10">
+                        </div>
                     </div>
 
                 </div>
@@ -236,62 +266,63 @@
         </section>
     </main>
 
-    <!-- Professional Dark Footer (Ads 2026 Compliant) -->
-    <footer class="bg-[#0F0A1A] text-gray-400 py-20 mt-12 border-t border-white/5">
-        <div class="container-pro">
+    <!-- Professional Compliant Footer -->
+    <footer class="text-slate-400 py-20 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-brand-accent/20 to-transparent"></div>
+        
+        <div class="container-pro relative z-10">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
                 
-                <!-- Brand & Support -->
-                <div class="lg:col-span-4 space-y-8">
+                <!-- Support Info -->
+                <div class="lg:col-span-4 space-y-10">
                     <span class="font-extrabold text-2xl tracking-tighter text-white uppercase block">GLYCOPEZIL</span>
-                    <p class="text-sm leading-relaxed max-w-sm">
-                        We are committed to providing quality products and excellent customer support. Our team is available 7 days a week to assist with your journey.
-                    </p>
-                    <div class="pt-4">
-                        <p class="text-[10px] uppercase font-bold tracking-widest text-white/40 mb-2">Customer Assistance</p>
-                        <p class="text-lg font-bold text-white">support@customercs.com</p>
+                    <div class="space-y-4">
+                        <p class="text-sm leading-relaxed max-w-sm">
+                            Committed to providing premium quality products and excellent customer support 7 days a week.
+                        </p>
+                        <div class="pt-2">
+                            <p class="text-[10px] uppercase font-bold tracking-[0.2em] text-slate-500 mb-2">Customer Assistance</p>
+                            <p class="text-lg font-bold text-white selection:bg-brand-accent">support@customercs.com</p>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Disclaimer & Legal -->
+                <!-- Legal & Disclaimers -->
                 <div class="lg:col-span-8 space-y-12">
-                    <div class="bg-white/5 p-8 rounded-3xl border border-white/10">
-                        <p class="text-[11px] leading-relaxed text-gray-400 italic text-justify">
-                            <strong>FDA Disclaimer:</strong> The statements on this website have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any supplement routine. All trademarks and registered trademarks are the property of their respective owners.
+                    <div class="bg-white/[0.03] p-8 md:p-10 rounded-3xl border border-white/5">
+                        <p class="text-[11px] leading-relaxed italic text-justify text-slate-400">
+                            <strong class="text-slate-200">FDA Disclaimer:</strong> The statements on this website have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results may vary. Consult your physician before beginning any supplement routine. All trademarks are the property of their respective owners.
                         </p>
                     </div>
                     
-                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-8 border-t border-white/5 pt-10">
-                        <nav class="flex flex-wrap gap-x-8 gap-y-4 text-[10px] font-black uppercase tracking-[0.2em] text-white/60">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-10 border-t border-white/5 pt-12">
+                        <nav class="flex flex-wrap gap-x-8 gap-y-6 text-[10px] font-black uppercase tracking-[0.25em] text-slate-500">
                             <button onclick="openModal('privacy')" class="hover:text-white transition-colors">Privacy Policy</button>
                             <button onclick="openModal('terms')" class="hover:text-white transition-colors">Terms & Conditions</button>
                             <button onclick="openModal('returns')" class="hover:text-white transition-colors">Refund Policy</button>
                             <button onclick="openModal('shipping')" class="hover:text-white transition-colors">Shipping Policy</button>
                             <button onclick="openModal('contact')" class="hover:text-white transition-colors">Contact</button>
                         </nav>
-                        <p class="text-[10px] font-bold text-white/20 uppercase tracking-widest">© 2026 GLYCOPEZIL. ALL RIGHTS RESERVED.</p>
+                        <p class="text-[10px] font-bold text-slate-700 uppercase tracking-widest">© 2026 GLYCOPEZIL.</p>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- LEGAL MODAL -->
+    <!-- MODAL -->
     <div id="policy-modal" class="fixed inset-0 z-[100] hidden" aria-modal="true" role="dialog">
-        <div class="fixed inset-0 bg-black/60 backdrop-blur-md" onclick="closeModal()"></div>
+        <div class="fixed inset-0 bg-black/80 backdrop-blur-md" onclick="closeModal()"></div>
         <div class="fixed inset-0 z-10 overflow-y-auto pointer-events-none">
             <div class="flex min-h-full items-center justify-center p-6">
-                <div class="relative w-full max-w-2xl bg-white rounded-3xl shadow-2xl overflow-hidden flex flex-col pointer-events-auto">
-                    <div class="px-8 py-6 border-b border-gray-50 flex justify-between items-center sticky top-0 bg-white z-10">
-                        <h3 class="font-black text-brand-primary uppercase tracking-widest text-xs" id="modal-title">Legal Information</h3>
-                        <button onclick="closeModal()" class="p-2 hover:bg-gray-100 rounded-full transition-all">
-                            <i data-feather="x" class="w-5 h-5"></i>
+                <div class="relative w-full max-w-2xl bg-white rounded-[2rem] shadow-2xl overflow-hidden flex flex-col pointer-events-auto">
+                    <div class="px-10 py-8 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-10">
+                        <h3 class="font-black text-brand-primary uppercase tracking-widest text-sm" id="modal-title">Legal Information</h3>
+                        <button onclick="closeModal()" class="p-3 hover:bg-slate-50 rounded-2xl transition-all">
+                            <i data-feather="x" class="w-6 h-6"></i>
                         </button>
                     </div>
-                    <div class="p-10 overflow-y-auto max-h-[70vh] text-sm leading-relaxed text-gray-600 prose" id="modal-content"></div>
-                    <div class="p-8 border-t border-gray-50 bg-gray-50 flex justify-end">
-                        <button onclick="closeModal()" class="bg-brand-primary text-white px-10 py-3 rounded-full font-bold text-xs uppercase tracking-widest">Close Window</button>
-                    </div>
+                    <div class="p-12 overflow-y-auto max-h-[70vh] text-base leading-relaxed text-slate-600 prose" id="modal-content"></div>
                 </div>
             </div>
         </div>
@@ -299,6 +330,12 @@
 
     <script>
         feather.replace();
+
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.reveal').forEach((el, index) => {
+                setTimeout(() => el.classList.add('active'), index * 100);
+            });
+        });
 
         const modalData = {
             privacy: { title: "Privacy Policy", content: "<h4>Privacy Information</h4><p>We take your data security seriously. All information collected is used solely for order fulfillment and internal customer support. We use industry-standard encryption for all transactions.</p>" },
@@ -323,11 +360,6 @@
         }
 
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-        
-        // Ensure reveal works immediately
-        window.addEventListener('load', () => {
-            document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
-        });
     </script>
 </body>
 </html>
