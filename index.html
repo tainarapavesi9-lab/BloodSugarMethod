@@ -7,23 +7,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
     <!-- =========================
-    SEO & ADS COMPLIANCE 2026
+    SEO & ADS COMPLIANCE 2026 - MULTI-COUNTRY
     ========================= -->
     <title>GlycoPezil | Natural Blood Sugar Support Formula – Official Website</title>
     <meta name="description" content="Discover GlycoPezil, a natural blood sugar support formula designed to help maintain healthy glucose levels and support metabolic wellness. Official website.">
-    <meta name="keywords" content="GlycoPezil, blood sugar support, glucose support formula, natural wellness, metabolic health">
+    
+    <!-- Hreflang for SEO in specific countries -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="en-GB" /> <!-- UK -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="en-NZ" /> <!-- NZ -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="en-AU" /> <!-- AU -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="en-IE" /> <!-- IE -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="de-DE" /> <!-- DE -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="es-ES" /> <!-- ES -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="de-AT" /> <!-- AT -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="fi-FI" /> <!-- FI -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="sv-SE" /> <!-- SE -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="nl-BE" /> <!-- BE -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="nl-NL" /> <!-- NL -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="de-CH" /> <!-- CH -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="da-DK" /> <!-- DK -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="pl-PL" /> <!-- PL -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="it-IT" /> <!-- IT -->
+    <link rel="alternate" href="https://bloodsugarmethod.vercel.app/" hreflang="x-default" />
+
     <meta name="robots" content="index, follow, max-image-preview:large">
     <link rel="canonical" href="https://bloodsugarmethod.vercel.app/">
 
-    <!-- Performance & Speed -->
+    <!-- Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="images/glycopezil1.webp">
 
-    <!-- EXTERNAL TRACKING SCRIPT -->
+    <!-- TRACKING SCRIPT (Updated as requested) -->
     <script src="https://cdn.raadsgate.com/code/8300-bd78ddee-305e-4e3c-87e1-b47e1f19de66"></script>
 
-    <!-- FAVICON (Explicit folder images) -->
+    <!-- FAVICON -->
     <link rel="icon" type="image/png" href="images/faviconV2.png">
     <link rel="shortcut icon" type="image/png" href="images/faviconV2.png">
 
@@ -41,6 +59,7 @@
             --brand-muted: #64748B;
             --footer-bg: #0A0712;
             --header-bg: #31165B;
+            --bg-accent: rgba(124, 58, 237, 0.04);
         }
         
         body { 
@@ -60,10 +79,10 @@
             pointer-events: none;
             background-color: #fcfaff;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.12) 0, transparent 50%), 
-                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.05) 0, transparent 40%),
-                radial-gradient(at 100% 100%, rgba(47, 21, 87, 0.08) 0, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(199, 210, 254, 0.15) 0, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(124, 58, 237, 0.12) 0, transparent 40%), 
+                radial-gradient(at 100% 0%, rgba(16, 185, 129, 0.05) 0, transparent 30%),
+                radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.8) 0, transparent 100%),
+                radial-gradient(at 100% 100%, var(--bg-accent) 0, transparent 40%);
         }
 
         .container-site {
@@ -83,8 +102,8 @@
 
         /* HERO SECTION */
         .hero-section {
-            padding-top: 2rem;
-            padding-bottom: 4rem;
+            padding-top: 1.5rem;
+            padding-bottom: 3rem;
             position: relative;
             z-index: 10;
         }
@@ -127,7 +146,7 @@
             width: 100%;
             max-width: 350px;
             transition: all 0.3s ease;
-            box-shadow: 0 15px 30px rgba(47, 21, 87, 0.2);
+            box-shadow: 0 15px 30px rgba(47, 21, 87, 0.15);
             border: none;
             text-decoration: none;
         }
@@ -139,31 +158,11 @@
             display: flex; align-items: center; justify-content: center;
         }
 
-        .btn-video {
-            background: #F8FAFC; 
-            border: 2px solid #CBD5E1; /* Borda definida */
-            color: #1E293B;
-            padding: 0.85rem 1.5rem;
-            border-radius: 99px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            font-weight: 700;
-            font-size: 1.05rem;
-            width: 100%;
-            max-width: 350px;
-            margin-top: 1rem;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-        .btn-video:hover { background: #F1F5F9; border-color: #94A3B8; transform: translateY(-1px); }
-
         /* PRODUCT IMAGE */
         .product-image {
             max-width: 100%;
             height: auto;
-            filter: drop-shadow(0 30px 50px rgba(47, 21, 87, 0.15));
+            filter: drop-shadow(0 30px 40px rgba(47, 21, 87, 0.12));
             animation: float 6s ease-in-out infinite;
         }
         @keyframes float {
@@ -211,13 +210,13 @@
                 text-align: center;   
             }
             .hero-badge-container { order: 1; margin-bottom: 1rem; justify-content: center; width: 100%; }
-            .hero-title-block { order: 2; margin-bottom: 1rem; width: 100%; }
-            .product-image-container { order: 3; margin: 1rem 0 2rem 0; display: flex; justify-content: center; width: 100%; } /* FOTO DEPOIS DO TITULO */
+            .hero-title-block { order: 2; margin-bottom: 1.5rem; width: 100%; }
+            .product-image-container { order: 3; margin: 1rem 0 2rem 0; display: flex; justify-content: center; width: 100%; }
             .hero-description { order: 4; margin: 0 auto 2rem auto; max-width: 90%; }
             .cta-container { order: 5; display: flex; flex-direction: column; align-items: center; width: 100%; }
             .trust-row { order: 6; justify-content: center; margin-top: 3rem; opacity: 0.5; width: 100%; }
             
-            .btn-buy, .btn-video { margin-left: auto; margin-right: auto; }
+            .btn-buy { margin-left: auto; margin-right: auto; }
             footer { padding: 2.5rem 0; }
         }
     </style>
@@ -235,6 +234,7 @@
 
     <main class="hero-section">
         <div class="container-site">
+            <!-- Content Grid/Flex -->
             <div class="hero-content-wrapper lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
                 
                 <!-- CONTENT AREA -->
@@ -256,9 +256,9 @@
                         <span class="title-sub">With GlycoPezil</span>
                     </div>
 
-                    <!-- PHOTO (Mobile order-3, after title) -->
+                    <!-- MOBILE PHOTO (order-3, after title) -->
                     <div class="product-image-container lg:hidden">
-                        <img src="images/glycopezil1.webp" alt="GlycoPezil Product" class="product-image max-w-[280px]">
+                        <img src="images/glycopezil1.webp" alt="GlycoPezil Formula" class="product-image max-w-[280px]">
                     </div>
                     
                     <!-- Description -->
@@ -266,18 +266,13 @@
                         Discover a natural way to support balanced blood sugar and daily metabolic health. Our advanced formula is designed to help maintain healthy glucose levels.
                     </p>
 
-                    <!-- CTA Buttons -->
-                    <div class="cta-container mb-12 lg:mt-10">
-                        <a href="https://6pcb7.doctorimpact.com/l" class="btn-buy">
+                    <!-- CTA Button -->
+                    <div class="cta-container mb-12 lg:mt-8">
+                        <a href="https://mwebora.com/12000/1227/7/?" class="btn-buy">
                             <span>Get GlycoPezil Today</span>
                             <div class="cart-dot">
                                 <i data-feather="shopping-cart" class="w-4 h-4 text-white"></i>
                             </div>
-                        </a>
-                        
-                        <a href="https://txqcm.doctormedved.com/l" class="btn-video">
-                            <i data-feather="play-circle" class="w-5 h-5 text-brand-purple"></i>
-                            Watch Video
                         </a>
                     </div>
 
@@ -301,7 +296,7 @@
                 <!-- DESKTOP PHOTO (Hidden on Mobile) -->
                 <div class="hidden lg:flex lg:col-span-5 justify-end">
                     <img src="images/glycopezil1.webp" 
-                         alt="GlycoPezil Formula" 
+                         alt="GlycoPezil Advanced Formula" 
                          class="product-image max-w-[460px]">
                 </div>
 
@@ -309,7 +304,7 @@
         </div>
     </main>
 
-    <!-- Footer - Narrow & Optimized -->
+    <!-- Footer - Optimized & Compliant -->
     <footer>
         <div class="container-site">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-10">
@@ -333,7 +328,7 @@
                 </div>
             </div>
 
-            <!-- Bottom Bar -->
+            <!-- Legals -->
             <div class="border-t border-white/5 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
                 <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2">
                     <button onclick="openModal('privacy')" class="footer-nav-link">Privacy Policy</button>
@@ -369,11 +364,11 @@
         feather.replace();
 
         const modalData = {
-            privacy: { title: "Privacy Policy", content: "<h4>Privacy Policy</h4><p>We respect your privacy. Data collected is used solely for order processing and internal customer support. We do not sell your personal information to third parties.</p>" },
-            terms: { title: "Terms & Conditions", content: "<h4>Terms and Conditions</h4><p>By using this website, you agree to comply with our terms. Products are dietary supplements and not intended as medical advice.</p>" },
-            returns: { title: "Refund Policy", content: "<h4>60-Day Guarantee</h4><p>Not satisfied? Request a refund within 60 days from the date of purchase. Please use the product for at least 30 days before requesting a refund.</p>" },
-            shipping: { title: "Shipping Policy", content: "<h4>Shipping Policy</h4><p>Orders are processed within 1-3 business days. Delivery times vary by location and carrier volume.</p>" },
-            contact: { title: "Contact Us", content: "<h4>Contact</h4><p>Email: support@customercs.com. Our support team is active 7 days a week to assist you.</p>" }
+            privacy: { title: "Privacy Policy", content: "<h4>Privacy</h4><p>We respect your privacy. All data is used solely for internal support and fulfillment.</p>" },
+            terms: { title: "Terms & Conditions", content: "<h4>Terms</h4><p>By using this website, you agree to our standard service terms.</p>" },
+            returns: { title: "Refund Policy", content: "<h4>Refunds</h4><p>60-day money-back guarantee. Contact support@customercs.com for assistance.</p>" },
+            shipping: { title: "Shipping Policy", content: "<h4>Shipping</h4><p>Orders are typically processed within 1-3 business days.</p>" },
+            contact: { title: "Contact", content: "<h4>Get In Touch</h4><p>Email: support@customercs.com.</p>" }
         };
 
         function openModal(type) {
